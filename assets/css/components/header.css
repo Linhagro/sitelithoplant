@@ -1,4 +1,4 @@
-﻿/* HEADER - LINHAGRO - FUNDO VERDE AO ROLAR */
+﻿/* HEADER - LINHAGRO - TRANSPARENTE NO TOPO, VERDE AO ROLAR, SEM FOSCO */
 
 .header {
   position: fixed;
@@ -7,9 +7,11 @@
   width: 100%;
   z-index: 1000;
 
-  background: transparent;          /* topo transparente */
+  background: transparent;              /* topo transparente real */
   border-bottom: 1px solid transparent;
   box-shadow: none;
+
+  backdrop-filter: none !important;     /* remove efeito fosco/blur atrás */
 
   transition:
     background 0.3s ease,
@@ -24,14 +26,14 @@
   box-shadow: none;
 }
 
-/* AQUI É O FUNDO VERDE QUANDO A CLASSE FOR ADICIONADA */
+/* FUNDO VERDE QUANDO A CLASSE FOR ADICIONADA */
 .header.header-overlay {
-  background-color: #274433;              /* verde desejado */
+  background-color: #274433;            /* verde desejado */
   border-bottom-color: rgba(0, 0, 0, 0.35);
   box-shadow: none;
 }
 
-/* NAVBAR + CONTEÚDO (mantém o que você já tinha) */
+/* NAVBAR + CONTEÚDO */
 
 .navbar {
   display: flex;
@@ -52,7 +54,7 @@
 }
 
 .logo-img {
-  height: 45px;
+  height: 60px;
   width: auto;
   object-fit: contain;
 }
@@ -65,48 +67,44 @@
   justify-content: center;
 }
 
+/* LINKS DO MENU - PILL + ANIMAÇÃO LARANJA (SEM RISCO EMBAIXO) */
+
 .nav-link {
   text-decoration: none;
   color: #f5f5f5;
   font-weight: 300;
   font-size: 15px;
   padding: 0.6rem 1rem;
-  transition: color 0.3s ease;
   white-space: nowrap;
   position: relative;
   letter-spacing: 0.3px;
+
+  border-radius: 999px; /* pill */
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%) scaleX(0);
-  width: 80%;
-  height: 2px;
-  background: linear-gradient(90deg, #F4A261, #E8965A);
-  border-radius: 2px;
-  transition: transform 0.3s ease;
-}
+/* removido o ::after para tirar o risquinho */
+/* .nav-link::after { content: none; } */
 
+/* HOVER: fundo laranja ff5500 + fonte branca */
 .nav-link:hover {
-  color: #F4A261;
-  font-weight: 400;
-}
-
-.nav-link:hover::after {
-  transform: translateX(-50%) scaleX(1);
-}
-
-.nav-link.active {
-  color: #F4A261;
+  background-color: #ff5500;
+  color: #ffffff;
   font-weight: 500;
+  transform: translateY(-1px);
 }
 
-.nav-link.active::after {
-  transform: translateX(-50%) scaleX(1);
+/* ATIVO: mesmo visual do hover, sempre ligado */
+.nav-link.active {
+  background-color: #ff5500;
+  color: #ffffff;
+  font-weight: 600;
 }
+
+/* AÇÕES / BOTÕES À DIREITA */
 
 .nav-actions {
   display: flex;
@@ -114,6 +112,8 @@
   align-items: center;
   flex-shrink: 0;
 }
+
+/* BOTÕES */
 
 .btn {
   padding: 0.65rem 1.5rem;
@@ -136,10 +136,12 @@
   font-size: 16px;
 }
 
+/* PORTAL DO COLABORADOR – PRETO COM FONTE BRANCA (borda laranja) */
+
 .btn-portal {
-  background: #F4A261;
-  color: #000;
-  border: 2px solid #F4A261;
+  background: #000000;
+  color: #ffffff;
+  border: 2px solid #ff5500;
 }
 
 .btn-portal::before {
@@ -163,22 +165,46 @@
 }
 
 .btn-portal:hover {
-  background: #ffb574;
-  border-color: #ffb574;
+  background: #222222;
+  border-color: #ff5500;
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
-.btn-whatsapp {
-  background: #25D366;
-  color: #fff;
+/* REDES SOCIAIS NO HEADER */
+
+.social-link.social-header {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 14px;
+  margin-left: 0.35rem;
+
+  background-color: transparent;
+  box-shadow: none;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.2s ease;
 }
 
-.btn-whatsapp:hover {
-  background: #20ba5a;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+/* HOVER: laranja chapado igual ao menu */
+.social-link.social-header:hover {
+  background-color: #ff5500;
+  color: #ffffff;
+  border-color: #ff5500;
+  box-shadow: none;
+  transform: translateY(-1px);
 }
+
+/* MENU MOBILE */
 
 .mobile-toggle {
   display: none;
@@ -259,16 +285,6 @@
     width: 100%;
     padding: 1rem 0;
     border-bottom: 1px solid #222;
-  }
-
-  .nav-link::after {
-    width: 100%;
-    left: 0;
-    transform: scaleX(0);
-  }
-
-  .nav-link.active::after {
-    transform: scaleX(1);
   }
 
   .nav-actions {
