@@ -16,11 +16,13 @@ function initIndexPage() {
 }
 
 /**
- * HERO SLIDER - 3 SLIDES
+ * HERO SLIDER - 3 SLIDES + SETAS
  */
 function initHeroSlider() {
   const slides = document.querySelectorAll('.hero-slide');
   const dots = document.querySelectorAll('.hero-dot');
+  const prevBtn = document.querySelector('.hero-arrow-prev');
+  const nextBtn = document.querySelector('.hero-arrow-next');
 
   if (!slides.length) return;
 
@@ -54,6 +56,11 @@ function initHeroSlider() {
     showSlide(nextIndex);
   }
 
+  function prevSlide() {
+    const prevIndex = (currentIndex - 1 + total) % total;
+    showSlide(prevIndex);
+  }
+
   function startAutoPlay() {
     stopAutoPlay();
     intervalId = setInterval(nextSlide, intervalTime);
@@ -66,6 +73,7 @@ function initHeroSlider() {
     }
   }
 
+  // Navegação pelos dots
   dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
       showSlide(index);
@@ -73,10 +81,25 @@ function initHeroSlider() {
     });
   });
 
+  // Navegação pelas setas
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      startAutoPlay();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      startAutoPlay();
+    });
+  }
+
   showSlide(0);
   startAutoPlay();
 
-  console.log('🎞️ Hero slider iniciado (3 slides)');
+  console.log('🎞️ Hero slider iniciado (3 slides + setas)');
 }
 
 /**
