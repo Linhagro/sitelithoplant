@@ -4,11 +4,11 @@
 
 let mapa;
 
-// Aguarda o carregamento do header/footer
+// Aguarda o carregamento do DOM e de header/footer
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     initConsultores();
-  }, 100);
+  }, 200);
 });
 
 function initConsultores() {
@@ -63,20 +63,31 @@ const filiais = [
 
 // Inicializar mapa Leaflet
 function inicializarMapa() {
+  const mapaEl = document.getElementById('mapa');
+  if (!mapaEl) {
+    console.error('Elemento #mapa não encontrado.');
+    return;
+  }
+
   const centroMapa = [-18.3, -40.1];
 
   mapa = L.map('mapa').setView(centroMapa, 7);
 
+  // TileLayer usando servidor OSM (ajustável)
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors',
-    maxZoom: 18
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors',
+    // referrerPolicy ajuda em alguns cenários de "Access blocked"
+    referrerPolicy: 'strict-origin-when-cross-origin'
   }).addTo(mapa);
 
   adicionarMarcadoresFiliais('todos');
 }
 
-// Adicionar marcadores de filiais (apenas logo PNG)
+// Adicionar marcadores de filiais (logo PNG)
 function adicionarMarcadoresFiliais(estadoFiltro) {
+  if (!mapa) return;
+
   // Limpa todas camadas exceto tile layer
   mapa.eachLayer(layer => {
     if (!(layer instanceof L.TileLayer)) {
@@ -104,11 +115,11 @@ function adicionarMarcadoresFiliais(estadoFiltro) {
 
     const popupHTML =
       '<div class="popup-consultor">' +
-      '<div class="popup-nome">' + filial.nome + '</div>' +
-      '<div class="popup-info">' +
-      '<span><i class="fas fa-map-marker-alt"></i> ' + filial.endereco + '</span>' +
-      '<span><i class="fas fa-city"></i> ' + filial.cidade + ' - ' + filial.estado + '</span>' +
-      '</div>' +
+        '<div class="popup-nome">' + filial.nome + '</div>' +
+        '<div class="popup-info">' +
+          '<span><i class="fas fa-map-marker-alt"></i> ' + filial.endereco + '</span>' +
+          '<span><i class="fas fa-city"></i> ' + filial.cidade + ' - ' + filial.estado + '</span>' +
+        '</div>' +
       '</div>';
 
     const marker = L.marker(filial.coordenadas, { icon: iconeFilial })
@@ -127,13 +138,14 @@ function adicionarMarcadoresFiliais(estadoFiltro) {
 // Filtros (filtram as filiais por estado)
 function setupFiltros() {
   const filtros = document.querySelectorAll('.filtro-btn');
+  if (!filtros.length) return;
 
   filtros.forEach(filtro => {
     filtro.addEventListener('click', () => {
       filtros.forEach(f => f.classList.remove('active'));
       filtro.classList.add('active');
 
-      const estado = filtro.dataset.estado;
+      const estado = filtro.dataset.estado || 'todos';
       adicionarMarcadoresFiliais(estado);
     });
   });
@@ -142,6 +154,7 @@ function setupFiltros() {
 // Animar estatísticas
 function animarStats() {
   const stats = document.querySelectorAll('.stat-numero');
+  if (!stats.length) return;
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

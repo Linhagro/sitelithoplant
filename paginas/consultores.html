@@ -21,7 +21,7 @@
   <!-- Leaflet CSS (Mapa) -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-  <!-- CSS -->
+  <!-- CSS do site -->
   <link rel="stylesheet" href="../assets/css/reset.css">
   <link rel="stylesheet" href="../assets/css/variaveis.css">
   <link rel="stylesheet" href="../assets/css/componentes.css">
@@ -29,6 +29,14 @@
   <link rel="stylesheet" href="../assets/css/components/footer.css">
   <link rel="stylesheet" href="../assets/css/paginas/consultores.css">
   <link rel="stylesheet" href="../assets/css/cookie-banner.css">
+
+  <style>
+    /* Garante que o mapa apareça */
+    #mapa.mapa-container {
+      width: 100%;
+      height: 400px;
+    }
+  </style>
 </head>
 <body>
 
@@ -258,8 +266,12 @@
           Fale com o consultor da sua região e construa uma estratégia regenerativa sob medida para a sua lavoura.
         </p>
         <div class="cta-buttons">
-          <a href="https://wa.me/5527999806801?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20o%20consultor%20da%20minha%20regi%C3%A3o%20da%20Linhagro"
-             target="_blank" rel="noopener noreferrer" class="btn-cta btn-primary">
+          <a
+            href="https://wa.me/5527999806801?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20o%20consultor%20da%20minha%20regi%C3%A3o%20da%20Linhagro"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-cta btn-primary"
+          >
             <i class="fab fa-whatsapp"></i>
             <span>Falar no WhatsApp</span>
           </a>
@@ -300,7 +312,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="../assets/components-loader.js"></script>
   <script src="../assets/js/components/header.js"></script>
-  <script src="../assets/js/paginas/consultores.js"></script>
+  <script src="../assets/js/consultores.js"></script>
 
   <!-- Carregar Cookie Banner -->
   <script>
