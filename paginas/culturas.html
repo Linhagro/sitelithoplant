@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Conheça os benefícios de Litho Plant em cada cultura e entenda como aplicar o manejo na sua lavoura.">
+  <title>Culturas - Litho Plant</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/imagens/favicon.png">
+
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS base -->
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/variaveis.css">
+  <link rel="stylesheet" href="../assets/css/componentes.css">
+  <link rel="stylesheet" href="../assets/css/components/header.css">
+  <link rel="stylesheet" href="../assets/css/components/footer.css">
+
+  <!-- CSS desta página -->
+  <link rel="stylesheet" href="../assets/css/paginas/culturas.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div id="header-container"></div>
+
+  <main class="culturas-page">
+    <!-- Hero / topo -->
+    <section class="hero-page hero-culturas">
+      <div class="container hero-culturas-container">
+        <div class="hero-culturas-textos">
+          <span class="hero-culturas-tag">
+            <i class="fas fa-seedling"></i>
+            <span>Culturas Litho Plant</span>
+          </span>
+          <h1 class="page-title">
+            Benefícios de Litho Plant em cada cultura
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de culturas (parte branca) -->
+    <section class="culturas-section">
+      <div class="container">
+        <h2 class="section-title">Escolha a cultura que você trabalha</h2>
+
+        <p class="section-subtitle section-subtitle-destaque">
+          Veja como Litho Plant atua em diferentes lavouras e entenda, cultura a cultura,
+          onde estão os ganhos de produtividade, qualidade de fruto e equilíbrio de planta.
+        </p>
+
+        <!-- Filtros de categoria na parte branca -->
+        <div class="culturas-filtros" aria-label="Filtrar culturas por tipo">
+          <button type="button" class="filtro-pill active" data-filter="todas">
+            <i class="fas fa-border-all"></i>
+            <span>Todas</span>
+          </button>
+          <button type="button" class="filtro-pill" data-filter="graos">
+            <i class="fas fa-wheat-awn"></i>
+            <span>Grãos</span>
+          </button>
+          <button type="button" class="filtro-pill" data-filter="frutiferas">
+            <i class="fas fa-apple-whole"></i>
+            <span>Frutíferas</span>
+          </button>
+          <button type="button" class="filtro-pill" data-filter="perenes">
+            <i class="fas fa-tree"></i>
+            <span>Perenes</span>
+          </button>
+          <button type="button" class="filtro-pill" data-filter="pastagem">
+            <i class="fas fa-cow"></i>
+            <span>Pastagens</span>
+          </button>
+        </div>
+
+        <p class="section-subtitle section-subtitle-secundaria">
+          Clique em uma cultura para ver os principais benefícios, aplicações e resultados práticos com Litho Plant no campo.
+        </p>
+
+        <div class="culturas-grid">
+          <!-- Soja -->
+          <article class="cultura-card" data-categoria="graos">
+            <div class="cultura-card-header">
+              <div class="cultura-icon">
+                <i class="fas fa-seedling"></i>
+              </div>
+              <div class="cultura-tag">
+                <span class="cultura-tag-label">Grãos</span>
+              </div>
+            </div>
+            <h3 class="cultura-nome">Soja</h3>
+            <p class="cultura-desc">
+              Maior estabilidade produtiva, melhor enchimento de grãos e plantas mais resistentes a estresses climáticos.
+            </p>
+            <div class="cultura-footer">
+              <a href="./culturas/soja.html" rel="noopener noreferrer">
+                <button class="cultura-button" type="button">
+                  <span class="cultura-button-text">Ver detalhes</span>
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor">
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                  </svg>
+                </button>
+              </a>
+            </div>
+          </article>
+
+          <!-- Café -->
+          <article class="cultura-card" data-categoria="perenes">
+            <div class="cultura-card-header">
+              <div class="cultura-icon">
+                <i class="fas fa-mug-hot"></i>
+              </div>
+              <div class="cultura-tag">
+                <span class="cultura-tag-label">Perenes</span>
+              </div>
+            </div>
+            <h3 class="cultura-nome">Café</h3>
+            <p class="cultura-desc">
+              Equilíbrio nutricional, sistema radicular ativo e safra mais estável em produtividade e qualidade de bebida.
+            </p>
+            <div class="cultura-footer">
+              <a href="../paginas/culturas/cafe.html" rel="noopener noreferrer">
+                <button class="cultura-button" type="button">
+                  <span class="cultura-button-text">Ver detalhes</span>
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor">
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                  </svg>
+                </button>
+              </a>
+            </div>
+          </article>
+
+          <!-- Mamão -->
+          <article class="cultura-card" data-categoria="frutiferas">
+            <div class="cultura-card-header">
+              <div class="cultura-icon">
+                <i class="fas fa-apple-alt"></i>
+              </div>
+              <div class="cultura-tag">
+                <span class="cultura-tag-label">Frutíferas</span>
+              </div>
+            </div>
+            <h3 class="cultura-nome">Mamão</h3>
+            <p class="cultura-desc">
+              Frutos mais firmes, melhor padronização de casca e maior aproveitamento comercial da produção.
+            </p>
+            <div class="cultura-footer">
+              <a href="../paginas/culturas/mamao.html" rel="noopener noreferrer">
+                <button class="cultura-button" type="button">
+                  <span class="cultura-button-text">Ver detalhes</span>
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor">
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                  </svg>
+                </button>
+              </a>
+            </div>
+          </article>
+
+          <!-- Pimenta -->
+          <article class="cultura-card" data-categoria="hortalicas">
+            <div class="cultura-card-header">
+              <div class="cultura-icon">
+                <i class="fas fa-pepper-hot"></i>
+              </div>
+              <div class="cultura-tag">
+                <span class="cultura-tag-label">Hortaliças e especiarias</span>
+              </div>
+            </div>
+            <h3 class="cultura-nome">Pimenta</h3>
+            <p class="cultura-desc">
+              Melhor pegamento de florada, enchimento de frutos e plantas mais equilibradas ao longo do ciclo.
+            </p>
+            <div class="cultura-footer">
+              <a href="../paginas/culturas/pimenta.html" rel="noopener noreferrer">
+                <button class="cultura-button" type="button">
+                  <span class="cultura-button-text">Ver detalhes</span>
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor">
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                  </svg>
+                </button>
+              </a>
+            </div>
+          </article>
+
+          <!-- Frutas -->
+          <article class="cultura-card" data-categoria="frutiferas">
+            <div class="cultura-card-header">
+              <div class="cultura-icon">
+                <i class="fas fa-apple-whole"></i>
+              </div>
+              <div class="cultura-tag">
+                <span class="cultura-tag-label">Frutíferas</span>
+              </div>
+            </div>
+            <h3 class="cultura-nome">Frutas</h3>
+            <p class="cultura-desc">
+              Desenvolvimento radicular, calibre de frutos e ganho de qualidade em diferentes espécies frutíferas.
+            </p>
+            <div class="cultura-footer">
+              <a href="../paginas/culturas/frutas.html" rel="noopener noreferrer">
+                <button class="cultura-button" type="button">
+                  <span class="cultura-button-text">Ver detalhes</span>
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor">
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                  </svg>
+                </button>
+              </a>
+            </div>
+          </article>
+
+          <!-- Coco -->
+          <article class="cultura-card" data-categoria="frutiferas">
+            <div class="cultura-card-header">
+              <div class="cultura-icon">
+                <i class="fas fa-umbrella-beach"></i>
+              </div>
+              <div class="cultura-tag">
+                <span class="cultura-tag-label">Frutíferas</span>
+              </div>
+            </div>
+            <h3 class="cultura-nome">Coco</h3>
+            <p class="cultura-desc">
+              Maior enchimento de frutos, vigor de planta e regularidade de produção ao longo do ano.
+            </p>
+            <div class="cultura-footer">
+              <a href="../paginas/culturas/coco.html" rel="noopener noreferrer">
+                <button class="cultura-button" type="button">
+                  <span class="cultura-button-text">Ver detalhes</span>
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor">
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                  </svg>
+                </button>
+              </a>
+            </div>
+          </article>
+
+          <!-- Cana -->
+          <article class="cultura-card" data-categoria="energia">
+            <div class="cultura-card-header">
+              <div class="cultura-icon">
+                <i class="fas fa-industry"></i>
+              </div>
+              <div class="cultura-tag">
+                <span class="cultura-tag-label">Energia</span>
+              </div>
+            </div>
+            <h3 class="cultura-nome">Cana</h3>
+            <p class="cultura-desc">
+              Perfilhamento mais forte, colmos mais estruturados e melhor aproveitamento da adubação.
+            </p>
+            <div class="cultura-footer">
+              <a href="../paginas/culturas/cana.html" rel="noopener noreferrer">
+                <button class="cultura-button" type="button">
+                  <span class="cultura-button-text">Ver detalhes</span>
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor">
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                  </svg>
+                </button>
+              </a>
+            </div>
+          </article>
+
+          <!-- Milho -->
+          <article class="cultura-card" data-categoria="graos">
+            <div class="cultura-card-header">
+              <div class="cultura-icon">
+                <i class="fas fa-corn"></i>
+              </div>
+              <div class="cultura-tag">
+                <span class="cultura-tag-label">Grãos</span>
+              </div>
+            </div>
+            <h3 class="cultura-nome">Milho</h3>
+            <p class="cultura-desc">
+              Plantas mais equilibradas, melhor formação de espigas e maior potencial produtivo.
+            </p>
+            <div class="cultura-footer">
+              <a href="../paginas/culturas/milho.html" rel="noopener noreferrer">
+                <button class="cultura-button" type="button">
+                  <span class="cultura-button-text">Ver detalhes</span>
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor">
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                  </svg>
+                </button>
+              </a>
+            </div>
+          </article>
+
+          <!-- Cacau -->
+          <article class="cultura-card" data-categoria="perenes">
+            <div class="cultura-card-header">
+              <div class="cultura-icon">
+                <i class="fas fa-seedling"></i>
+              </div>
+              <div class="cultura-tag">
+                <span class="cultura-tag-label">Perenes</span>
+              </div>
+            </div>
+            <h3 class="cultura-nome">Cacau</h3>
+            <p class="cultura-desc">
+              Pegamento de florada, conforto fisiológico e plantas mais preparadas para estresse térmico.
+            </p>
+            <div class="cultura-footer">
+              <a href="../paginas/culturas/cacau.html" rel="noopener noreferrer">
+                <button class="cultura-button" type="button">
+                  <span class="cultura-button-text">Ver detalhes</span>
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor">
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                  </svg>
+                </button>
+              </a>
+            </div>
+          </article>
+
+          <!-- Pastagem -->
+          <article class="cultura-card" data-categoria="pastagem">
+            <div class="cultura-card-header">
+              <div class="cultura-icon">
+                <i class="fas fa-cow"></i>
+              </div>
+              <div class="cultura-tag">
+                <span class="cultura-tag-label">Pastagens</span>
+              </div>
+            </div>
+            <h3 class="cultura-nome">Pastagem</h3>
+            <p class="cultura-desc">
+              Mais massa verde, melhor valor nutritivo e recuperação de áreas com baixo vigor.
+            </p>
+            <div class="cultura-footer">
+              <a href="../paginas/culturas/pastagem.html" rel="noopener noreferrer">
+                <button class="cultura-button" type="button">
+                  <span class="cultura-button-text">Ver detalhes</span>
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke-width="1.5"
+                       stroke="currentColor">
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                  </svg>
+                </button>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="cta-section cta-culturas">
+      <div class="container">
+        <h2 class="cta-title">
+          Quer trazer esses benefícios para a sua lavoura?
+        </h2>
+        <p class="cta-text">
+          Fale com um consultor técnico e veja, na prática, como encaixar Litho Plant no manejo da sua cultura,
+          do diagnóstico até o acompanhamento em campo.
+        </p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/5527999806801?text=Ol%C3%A1!%20Quero%20saber%20sobre%20os%20benef%C3%ADcios%20de%20Litho%20Plant%20na%20minha%20cultura."
+             target="_blank"
+             rel="noopener noreferrer"
+             class="btn-cta btn-primary">
+            <i class="fab fa-whatsapp"></i>
+            <span>Conversar com um consultor</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer-container"></div>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <div class="whatsapp-floating">
+    <a
+      href="https://wa.me/5527999806801?text=Ol%C3%A1!%20Quero%20saber%20sobre%20Litho%20Plant%20nas%20culturas."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar com Litho Plant no WhatsApp"
+      class="whatsapp-floating-button"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div class="whatsapp-floating-message">
+      <span>Fale com um consultor</span>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="../assets/components-loader.js"></script>
+  <script src="../assets/js/components/header.js"></script>
+  <script src="../assets/js/paginas/culturas.js"></script>
+</body>
+</html>

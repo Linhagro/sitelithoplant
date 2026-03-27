@@ -1,46 +1,34 @@
 /**
- * INDEX - CSS FINAL (hero slider + seções + whatsapp flutuante)
+ * INDEX - CSS FINAL (hero slider + seções + whatsapp flutuante + produto em destaque)
  */
 
-/* ==========================================
-   HEADER - ESCONDER AO ROLAR + OVERLAY VERDE
-   =========================================== */
-
+/* HEADER - overlay AZUL ao rolar */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   background: transparent;
   border-bottom: 1px solid transparent;
 }
 
-/* esconder ao rolar para baixo */
 .site-header.header-hidden {
   transform: translateY(-100%);
   box-shadow: none;
 }
 
-/* overlay VERDE ao passar do threshold de scroll (classe adicionada pelo JS) */
 .site-header.header-overlay {
-  background: #2D5016;
+  background: #174283; /* azul Litho */
   border-bottom-color: rgba(0, 0, 0, 0.35);
   box-shadow: none;
 }
 
-/* ==========================================
-   HERO (SLIDER COM 3 BANNERS)
-   =========================================== */
-
+/* HERO */
 .hero {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  background: #1a1a1a;
+  background: #0b1b33;
 }
 
 .hero-single {
@@ -60,7 +48,6 @@
   pointer-events: auto;
 }
 
-/* fundo */
 .hero-background {
   position: absolute;
   inset: 0;
@@ -71,7 +58,6 @@
   z-index: 0;
 }
 
-/* DESKTOP – imagens 1920x1080 */
 .hero-bg-1 {
   background-image: url('../../imagens/hero/desktop/hero-slide-1.jpg');
   background-color: #0d5940;
@@ -87,33 +73,34 @@
   background-color: #0d5940;
 }
 
-/* TABLET */
 @media (max-width: 1024px) and (min-width: 769px) {
   .hero-bg-1 {
     background-image: url('../../imagens/hero/tablet/hero-slide-1.jpg');
   }
+
   .hero-bg-2 {
     background-image: url('../../imagens/hero/tablet/hero-slide-2.jpg');
   }
+
   .hero-bg-3 {
     background-image: url('../../imagens/hero/tablet/hero-slide-3.jpg');
   }
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
   .hero-bg-1 {
     background-image: url('../../imagens/hero/mobile/hero-slide-1.jpg');
   }
+
   .hero-bg-2 {
     background-image: url('../../imagens/hero/mobile/hero-slide-2.jpg');
   }
+
   .hero-bg-3 {
     background-image: url('../../imagens/hero/mobile/hero-slide-3.jpg');
   }
 }
 
-/* sem overlay escuro estrutural – se precisar, crie só um overlay leve */
 .hero-overlay {
   display: none;
 }
@@ -132,12 +119,10 @@
   padding-top: 40px;
 }
 
-/* badge SEM blur/sombra “embaçada” */
 .hero-badge {
   display: inline-block;
   padding: 6px 16px;
   background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: none;
   border-radius: 999px;
   font-size: 13px;
   font-weight: 600;
@@ -155,18 +140,17 @@
 }
 
 .hero-highlight-laranja {
-  background: linear-gradient(135deg, #FF5500 0%, #FF5500 100%);
+  background: linear-gradient(135deg, #174283 0%, #1f5bb3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* cursor (se aparecer em algum lugar) */
 .hero-cursor {
   display: inline-block;
   margin-left: 4px;
   font-weight: 800;
-  background: linear-gradient(135deg, #FF5500 0%, #FF5500 100%);
+  background: linear-gradient(135deg, #174283 0%, #1f5bb3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -174,8 +158,14 @@
 }
 
 @keyframes blink-cursor {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .hero-subtitle {
@@ -207,14 +197,14 @@
 }
 
 .btn-hero-primary {
-  background: linear-gradient(135deg, #FF5500 0%, #FF5500 100%);
+  background: linear-gradient(135deg, #174283 0%, #1f5bb3 100%);
   color: var(--cor-branco);
-  box-shadow: 0 6px 20px rgba(255, 85, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(23, 66, 131, 0.45);
 }
 
 .btn-hero-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(255, 85, 0, 0.5);
+  box-shadow: 0 10px 28px rgba(23, 66, 131, 0.6);
 }
 
 .btn-hero-secondary {
@@ -229,7 +219,7 @@
   border-color: var(--cor-branco);
 }
 
-/* DOTS DO SLIDER */
+/* DOTS */
 .hero-dots {
   position: absolute;
   left: 50%;
@@ -252,12 +242,12 @@
 }
 
 .hero-dot.active {
-  background: #FF5500;
-  border-color: #FF5500;
+  background: #174283;
+  border-color: #174283;
   width: 24px;
 }
 
-/* SETAS LATERAIS DO SLIDER */
+/* SETAS */
 .hero-arrow {
   position: absolute;
   top: 50%;
@@ -294,92 +284,94 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
-/* ==========================================
-   NÚMEROS RÁPIDOS – TEXTO EM DEGRADÊ
-   =========================================== */
-
-.numeros-rapidos {
+/* QUEM SOMOS – NOVO LAYOUT CENTRALIZADO */
+.quem-somos-home {
+  padding: 72px 0;
   background: var(--cor-branco);
-  border-bottom: 1px solid var(--cor-border);
-  padding-bottom: 60px;
 }
 
-/* container sem fundo laranja */
-.faixa-resultados {
-  position: relative;
-  width: 100%;
+.quem-somos-novo {
+  max-width: 960px;
   margin: 0 auto;
-  padding: 26px 16px;
-  text-align: center;
-  background: transparent;
-}
-
-/* texto com degradê laranja */
-.faixa-resultados-titulo {
-  max-width: 1200px;
-  margin: 0 auto;
-  font-family: var(--fonte-titulos);
-  font-size: 28px;
-  font-weight: 800;
-  line-height: 1.3;
-  background: linear-gradient(90deg, #ff9a3c 0%, #ff5500 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* conteúdo numérico abaixo, dentro do container padrão */
-.numeros-rapidos .container {
-  padding-top: 32px;
-}
-
-.numeros-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--espacamento-xl);
   text-align: center;
 }
 
-.numero-item {
-  padding: var(--espacamento-md);
+.quem-somos-head {
+  margin-bottom: 20px;
 }
 
-.numero-numero {
+.quem-somos-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  background: rgba(23, 66, 131, 0.08);
+  color: #174283;
+  margin-bottom: 10px;
+}
+
+.quem-somos-heading {
   font-family: var(--fonte-titulos);
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 800;
-  color: #FF5500;
-  margin-bottom: 4px;
+  color: #174283;
+  margin-bottom: 6px;
 }
 
-.numero-texto {
-  font-size: 14px;
+.quem-somos-chip {
+  font-size: 15px;
   color: var(--cor-cinza-escuro);
-  font-weight: 500;
 }
 
-/* ==========================================
-   SEÇÕES GERAIS
-   =========================================== */
+.quem-somos-body p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--cor-cinza-escuro);
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* PROGRAMAS NUTRICIONAIS */
+.destaques {
+  padding: 80px var(--espacamento-lg);
+}
+
+.programas-litho {
+  background: linear-gradient(90deg, #0f2d5a 0%, #174283 60%, #0b1b33 100%);
+}
 
 .section-header {
   text-align: center;
   margin-bottom: 48px;
 }
 
+.section-header-branco {
+  color: #ffffff;
+}
+
+.section-header-branco .section-title,
+.section-header-branco .section-subtitle {
+  color: #ffffff;
+}
+
 .section-tag {
   display: inline-block;
   padding: 6px 16px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 85, 0, 0.1) 0%,
-    rgba(255, 85, 0, 0.05) 100%
-  );
-  color: #FF5500;
   border-radius: 999px;
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 12px;
+}
+
+.section-tag-azul {
+  background: rgba(23, 66, 131, 0.08);
+  color: #174283;
+}
+
+.section-tag-branco {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
 }
 
 .section-title {
@@ -390,31 +382,15 @@
   margin-bottom: 12px;
 }
 
+.section-title-azul {
+  color: #174283;
+}
+
 .section-subtitle {
   font-size: 17px;
   color: var(--cor-cinza-escuro);
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
-}
-
-/* ==========================================
-   DESTAQUES / PILARES – FUNDO LARANJA
-   =========================================== */
-
-.destaques {
-  padding: 80px var(--espacamento-lg);
-  background: linear-gradient(90deg, #ff9a3c 0%, #ff5500 100%);
-}
-
-/* textos da Metodologia em branco sobre o laranja */
-.destaques .section-title,
-.destaques .section-subtitle {
-  color: #ffffff;
-}
-
-.destaques .section-tag {
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.18);
 }
 
 .destaques-grid {
@@ -426,137 +402,137 @@
 .destaque-card {
   background: #ffffff;
   padding: 32px;
-  border-radius: 16px;
-  border: 2px solid transparent;
+  border-radius: 24px;
+  border: 2px solid rgba(0, 0, 0, 0.02);
   transition: all 0.3s ease;
+  box-shadow: 0 18px 40px rgba(15, 46, 76, 0.26);
 }
 
 .destaque-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
-  border-color: #FF5500;
+  transform: translateY(-6px);
+  box-shadow: 0 24px 56px rgba(15, 46, 76, 0.35);
+  border-color: rgba(0, 0, 0, 0.04);
 }
 
 .destaque-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 12px;
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 30px;
   color: var(--cor-branco);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   transition: all 0.3s ease;
 }
 
 .destaque-card:hover .destaque-icon {
-  transform: scale(1.1) rotate(-5deg);
+  transform: translateY(-2px) scale(1.04);
 }
 
 .destaque-icon-verde {
-  background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
-}
-
-.destaque-icon-laranja {
-  background: linear-gradient(135deg, #FF5500 0%, #FF5500 100%);
+  background: linear-gradient(135deg, #066839 0%, #0a9150 100%);
 }
 
 .destaque-icon-azul {
-  background: linear-gradient(135deg, #2196F3 0%, #42A5F5 100%);
+  background: linear-gradient(135deg, #174283 0%, #1f5bb3 100%);
+}
+
+.destaque-icon-azul-escuro {
+  background: linear-gradient(135deg, #0b1b33 0%, #174283 100%);
 }
 
 .destaque-title {
   font-family: var(--fonte-titulos);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
-  color: #1f3b2b;
-  margin-bottom: 12px;
+  color: #111827;
+  margin-bottom: 14px;
 }
 
 .destaque-text {
   color: var(--cor-cinza-escuro);
-  line-height: 1.6;
-  margin-bottom: 16px;
+  line-height: 1.7;
+  margin-bottom: 22px;
   font-size: 15px;
 }
 
-/* botão/link Fale com um consultor em verde */
+/* BOTÕES DOS CARDS */
 .destaque-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 10px 18px;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
   border-radius: 999px;
-  background: #4caf50;
-  color: #ffffff;
   font-weight: 600;
   text-decoration: none;
-  font-size: 14px;
-  transition: all 0.3s ease;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  min-width: 0;
+  box-shadow: 0 12px 24px rgba(6, 104, 57, 0.28);
+  border: 1px solid transparent;
 }
 
-.destaque-link i {
-  font-size: 14px;
+.destaque-btn {
+  background: #066839;
+  color: #ffffff;
 }
 
-.destaque-link:hover {
-  gap: 10px;
-  background: #43a047;
+.destaque-btn:hover {
+  background: #0a9150;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px rgba(6, 104, 57, 0.35);
 }
 
-/* ==========================================
-   ECOSSISTEMA / EXPLORE ÁREAS – CARDS LARANJA
-   =========================================== */
+.destaque-btn-outline {
+  background: transparent;
+  color: #174283;
+  border-color: #174283;
+  box-shadow: 0 10px 24px rgba(23, 66, 131, 0.25);
+}
 
+.destaque-btn-outline:hover {
+  background: #174283;
+  color: #ffffff;
+}
+
+/* BENEFÍCIOS POR CULTURA */
 .explore-areas {
   padding: 80px var(--espacamento-lg);
   background: var(--cor-branco);
 }
 
-/* título e subtítulo com destaque em laranja */
 .explore-areas .section-tag {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 85, 0, 0.15) 0%,
-    rgba(255, 85, 0, 0.05) 100%
-  );
-  color: #FF5500;
+  background: rgba(23, 66, 131, 0.08);
+  color: #174283;
 }
 
-.explore-areas .section-title {
-  color: #1f3b2b;
-}
-
-.explore-areas .section-subtitle {
-  color: var(--cor-cinza-escuro);
-}
-
-/* grid de cards */
 .areas-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
 }
 
-/* cards com fundo laranja em degradê */
 .area-card {
-  background: linear-gradient(135deg, #ff9a3c 0%, #ff5500 100%);
-  border: none;
   border-radius: 16px;
   padding: 28px;
   text-decoration: none;
   transition: all 0.3s ease;
   display: block;
+}
+
+.area-card.azul {
+  background: linear-gradient(135deg, #174283 0%, #1f5bb3 100%);
   color: #ffffff;
 }
 
-.area-card:hover {
+.area-card.azul:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 32px rgba(23, 66, 131, 0.45);
 }
 
-/* ícones sobre o card laranja */
 .area-icon {
   width: 56px;
   height: 56px;
@@ -566,24 +542,13 @@
   justify-content: center;
   font-size: 24px;
   margin-bottom: 16px;
-  transition: all 0.3s ease;
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.18);
   color: #ffffff;
+  transition: all 0.3s ease;
 }
 
 .area-card:hover .area-icon {
   transform: scale(1.1);
-}
-
-/* classes de cor mantidas, mas com mesmo estilo base */
-.area-icon-laranja,
-.area-icon-verde,
-.area-icon-azul,
-.area-icon-roxo,
-.area-icon-indigo,
-.area-icon-vermelho {
-  background: rgba(0, 0, 0, 0.12);
-  color: #ffffff;
 }
 
 .area-title {
@@ -596,7 +561,7 @@
 
 .area-descricao {
   font-size: 14px;
-  color: #fff7ec;
+  color: #e5f0ff;
   line-height: 1.5;
   margin-bottom: 12px;
 }
@@ -611,14 +576,127 @@
   transform: translateX(5px);
 }
 
-/* ==========================================
-   PARCEIROS – CARROSSEL INFINITO
-   =========================================== */
+/* PRODUTO EM DESTAQUE – SOMBRYT BR */
+.produto-destaque {
+  padding: 80px var(--espacamento-lg);
+  background: var(--cor-branco);
+}
 
+.produto-destaque-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+  gap: 40px;
+  align-items: stretch; /* mesmas alturas nas colunas */
+}
+
+/* coluna da imagem */
+.produto-destaque-imagem {
+  background: linear-gradient(135deg, #174283 0%, #1f5bb3 100%);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  /* ALTURA PADRÃO FIXA DO FUNDO */
+  min-height: 360px;
+}
+
+.produto-destaque-imagem img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* coluna de texto – card com fundo fixo */
+.produto-destaque-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 18px 40px rgba(15, 46, 76, 0.16);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  /* ALTURA PADRÃO FIXA DO FUNDO */
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* tag "Produto em destaque" reaproveitando estilo de destaque-tag */
+.produto-tag.destaque-tag {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(23, 66, 131, 0.08);
+  color: #174283;
+  margin-bottom: 10px;
+}
+
+.produto-subtitulo {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.produto-titulo {
+  font-family: var(--fonte-titulos);
+  font-size: 28px;
+  font-weight: 800;
+  color: #174283;
+  margin-bottom: 10px;
+}
+
+.produto-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--cor-cinza-escuro);
+  margin-bottom: 18px;
+}
+
+.produto-beneficios {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 14px;
+  color: #111827;
+}
+
+.produto-beneficios li::before {
+  content: "• ";
+  color: #174283;
+}
+
+.produto-doses {
+  margin-top: auto; /* fixa doses na base do card */
+  font-size: 14px;
+  color: var(--cor-cinza-escuro);
+}
+
+.produto-doses strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+/* NOSSOS PRODUTOS – APENAS O PRODUTO, SEM CARD */
 .parceiros {
   padding: 60px 0;
   background: var(--cor-claro);
   overflow: hidden;
+}
+
+.produtos-litho .section-tag {
+  background: rgba(23, 66, 131, 0.08);
+  color: #174283;
+}
+
+.produtos-litho .section-title {
+  color: #174283;
 }
 
 .parceiros .container {
@@ -639,58 +717,63 @@
 
 .parceiros-track {
   display: flex;
-  gap: 32px;
-  animation: scrollInfinito 20s linear infinite;
+  gap: 48px;
+  animation: scrollInfinito 26s linear infinite;
 }
 
 @keyframes scrollInfinito {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-33.3333%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .parceiros-track:hover {
   animation-play-state: paused;
 }
 
+/* NOSSOS PRODUTOS – produto sempre inteiro */
 .parceiro-item {
   flex-shrink: 0;
-  width: 160px;
-  height: 90px;
-  background: var(--cor-branco);
-  border: 1px solid var(--cor-border);
-  border-radius: 12px;
+  width: 220px;        /* mais espaço lateral */
+  height: 260px;       /* mais espaço vertical */
+  background: transparent;
+  border: none;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px;
-  transition: all 0.3s ease;
+  padding: 0;
+  transition: transform 0.25s ease;
+  overflow: visible;   /* nada é cortado */
 }
 
 .parceiro-logo {
-  max-height: 60px;
-  max-width: 140px;
+  max-height: 80%;     /* deixa folga em cima/baixo */
+  max-width: 80%;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.85;
-  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  filter: grayscale(5%);
+  opacity: 0.98;
+  transition:
+    filter 0.25s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
+/* zoom moderado para não passar do container */
 .parceiro-item:hover {
-  border-color: #FF5500;
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(255, 85, 0, 0.2);
+  transform: translateY(-4px);
 }
 
 .parceiro-item:hover .parceiro-logo {
   filter: grayscale(0%);
   opacity: 1;
-  transform: scale(1.22) translateY(-3px);
+  transform: scale(1.2);  /* reduzido para não estourar */
 }
 
-/* ==========================================
-   BOTÃO WHATSAPP FLUTUANTE + NUVEM 3 BOLHAS
-   =========================================== */
-
+/* WHATSAPP FLUTUANTE */
 .whatsapp-floating {
   position: fixed;
   bottom: 20px;
@@ -702,7 +785,6 @@
   gap: 6px;
 }
 
-/* Botão redondo */
 .whatsapp-floating-button {
   display: flex;
   align-items: center;
@@ -724,12 +806,11 @@
   background-color: #1ebe5b;
 }
 
-/* Bolha maior com a mensagem */
 .whatsapp-floating-message {
   position: relative;
   max-width: 220px;
-  background: linear-gradient(135deg, #f3e8ff 0%, #e0d4ff 100%);
-  color: #1f2933;
+  background: linear-gradient(135deg, #e0ebff 0%, #c7dafc 100%);
+  color: #111827;
   border-radius: 18px;
   padding: 8px 12px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
@@ -749,7 +830,6 @@
   display: block;
 }
 
-/* bolha média – encostada na nuvem, lado do botão */
 .whatsapp-floating-message::after {
   content: '';
   position: absolute;
@@ -757,12 +837,11 @@
   bottom: -6px;
   width: 14px;
   height: 14px;
-  background: linear-gradient(135deg, #f3e8ff 0%, #e0d4ff 100%);
+  background: linear-gradient(135deg, #e0ebff 0%, #c7dafc 100%);
   border-radius: 50%;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
 }
 
-/* bolha pequena – mais perto do botão, abaixo da média */
 .whatsapp-floating-message::before {
   content: '';
   position: absolute;
@@ -770,7 +849,7 @@
   bottom: -18px;
   width: 8px;
   height: 8px;
-  background: linear-gradient(135deg, #f3e8ff 0%, #e0d4ff 100%);
+  background: linear-gradient(135deg, #e0ebff 0%, #c7dafc 100%);
   border-radius: 50%;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
 }
@@ -781,15 +860,9 @@
   pointer-events: auto;
 }
 
-/* ==========================================
-   RESPONSIVIDADE
-   =========================================== */
-
+/* RESPONSIVIDADE */
 @media (max-width: 1024px) {
-  .hero {
-    min-height: 88vh;
-  }
-
+  .hero,
   .hero-single {
     min-height: 88vh;
   }
@@ -801,13 +874,14 @@
   .section-title {
     font-size: 32px;
   }
+
+  .quem-somos-heading {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 768px) {
-  .hero {
-    min-height: 78vh;
-  }
-
+  .hero,
   .hero-single {
     min-height: 78vh;
   }
@@ -841,29 +915,13 @@
     justify-content: center;
   }
 
-  .faixa-resultados {
-    padding: 20px 12px;
-  }
-
-  .faixa-resultados-titulo {
-    font-size: 20px;
-  }
-
-  .numeros-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  .numero-numero {
-    font-size: 28px;
-  }
-
   .section-title {
     font-size: 28px;
   }
 
   .destaques,
-  .explore-areas {
+  .explore-areas,
+  .produto-destaque {
     padding: 60px var(--espacamento-lg);
   }
 
@@ -887,8 +945,8 @@
   }
 
   .parceiro-item {
-    width: 130px;
-    height: 75px;
+    width: 150px;
+    height: 150px;
   }
 
   .whatsapp-floating {
@@ -906,15 +964,20 @@
     max-width: 190px;
     font-size: 12px;
   }
+
+  .produto-destaque-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .produto-destaque-imagem,
+  .produto-destaque-card {
+    min-height: 320px; /* pode mudar para 360 se quiser igual ao desktop */
+  }
 }
 
 @media (max-width: 480px) {
   .hero-title {
     font-size: 26px;
-  }
-
-  .numeros-grid {
-    grid-template-columns: 1fr;
   }
 
   .whatsapp-floating-message {

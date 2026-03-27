@@ -3,153 +3,489 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Veja os resultados reais de nossos clientes - Depoimentos em vídeo e como a Linhagro pode transformar sua lavoura.">
+  <title>Resultados - Litho Plant</title>
+  <meta name="description" content="Nossos resultados em soja, café, mamão, pimentão, frutas, coco, milho e outras culturas com as tecnologias Litho Plant.">
 
-  <title>Resultados de Nossos Clientes - Linhagro</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="../assets/imagens/favicon.png">
-
-  <!-- Fontes Google -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- CSS -->
+  <!-- CSS globais -->
   <link rel="stylesheet" href="../assets/css/reset.css">
   <link rel="stylesheet" href="../assets/css/variaveis.css">
   <link rel="stylesheet" href="../assets/css/componentes.css">
   <link rel="stylesheet" href="../assets/css/components/header.css">
   <link rel="stylesheet" href="../assets/css/components/footer.css">
+  <link rel="stylesheet" href="../assets/css/cookie-banner.css">
   <link rel="stylesheet" href="../assets/css/paginas/resultados.css">
-</head>
-<body>
 
-  <!-- HEADER -->
+  <!-- Fontes e ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2b6cd552f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- HEADER via componentes -->
   <div id="header-container"></div>
 
-  <!-- CONTEÚDO DA PÁGINA -->
   <main class="resultados-page">
 
-    <!-- Hero -->
-    <section class="hero-page">
-      <div class="container">
-        <h1 class="page-title">Performance comprovada no campo</h1>
-        <p class="page-subtitle">
-          Dados reais de áreas acompanhadas com manejo biológico e estratégia regenerativa aplicada
-        </p>
+    <!-- HERO -->
+    <section class="hero-page hero-resultados">
+      <div class="hero-content">
+        <span class="hero-pill"><i class="fas fa-chart-line"></i> Nossos resultados</span>
+        <h1>Seu resultado mede o nosso sucesso</h1>
       </div>
     </section>
 
-    <!-- Estatísticas -->
-    <section class="stats-section">
+    <!-- VÍDEO PRINCIPAL -->
+    <section class="resultados-video">
       <div class="container">
-        <div class="stats-grid">
-
-          <div class="stat-card">
-            <div class="stat-number" data-valor="500" data-sufixo="+">0</div>
-            <div class="stat-label">Produtores Acompanhados</div>
-            <p class="stat-text">
-              Relacionamentos técnicos contínuos com foco em produtividade e construção de fertilidade de solo.
-            </p>
+        <div class="hero-video-wrapper">
+          <div class="hero-video-ratio">
+            <iframe
+              src="https://www.youtube.com/embed/haPQsN9KUUs"
+              title="Resultados Litho Plant"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
           </div>
-
-          <div class="stat-card">
-            <div class="stat-number" data-valor="35" data-sufixo="%">0</div>
-            <div class="stat-label">Ganho Produtivo</div>
-            <p class="stat-text">
-              Resultados médios observados em áreas que aplicaram diagnóstico técnico, nutrição estratégica e acompanhamento de ciclo.
-            </p>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-number" data-valor="50000" data-format="k">0</div>
-            <div class="stat-label">Hectares Monitorados</div>
-            <p class="stat-text">
-              Áreas conduzidas com manejo técnico estruturado e aplicação de soluções biológicas.
-            </p>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-number" data-valor="25" data-sufixo="+">0</div>
-            <div class="stat-label">Anos de Atuação</div>
-            <p class="stat-text">
-              Experiência consolidada na evolução do manejo nutricional e na transição para modelos regenerativos.
-            </p>
-          </div>
-
         </div>
       </div>
     </section>
 
-    <!-- Depoimentos em Vídeo -->
-    <section class="testimonials-section">
-      <div class="container">
-        <h2 class="section-title">O Que Dizem Nossos Clientes</h2>
-        <p class="section-subtitle">Depoimentos em vídeo de produtores que confiam na Linhagro</p>
+    <!-- LAYOUT PRINCIPAL -->
+    <section class="resultados-layout">
+      <div class="container resultados-container">
 
-        <div class="video-testimonials-list" id="video-testimonials-list">
-          <!-- Cards gerados via JS -->
-        </div>
+        <!-- COLUNA ESQUERDA: CULTURAS -->
+        <aside class="culturas-sidebar">
+          <h2 class="culturas-titulo">Culturas atendidas</h2>
+          <ul class="culturas-lista">
+            <li class="cultura-item active" data-cultura="soja"><button type="button">Soja</button></li>
+            <li class="cultura-item" data-cultura="cafe"><button type="button">Café</button></li>
+            <li class="cultura-item" data-cultura="mamao"><button type="button">Mamão</button></li>
+            <li class="cultura-item" data-cultura="pimenta"><button type="button">Pimentão</button></li>
+            <li class="cultura-item" data-cultura="frutas"><button type="button">Frutas</button></li>
+            <li class="cultura-item" data-cultura="coco"><button type="button">Coco</button></li>
+            <li class="cultura-item" data-cultura="milho"><button type="button">Milho</button></li>
+            <!-- demais, se quiser, deixa comentado -->
+            <!-- <li class="cultura-item" data-cultura="cana"><button type="button">Cana</button></li> -->
+            <!-- <li class="cultura-item" data-cultura="cacau"><button type="button">Cacau</button></li> -->
+            <!-- <li class="cultura-item" data-cultura="pastagem"><button type="button">Pastagem</button></li> -->
+          </ul>
+        </aside>
+
+        <!-- COLUNA DIREITA: CONTEÚDO -->
+        <section class="resultados-conteudo">
+
+          <!-- SOJA -->
+          <article class="cultura-bloco ativo" data-cultura="soja">
+            <header class="cultura-header">
+              <p class="cultura-tag">Soja</p>
+              <h2>Resultados em soja com Litho Plant</h2>
+              <p class="cultura-intro">
+                Depoimento de produtor que utiliza os programas Litho Plant em soja, com ganhos em produtividade mesmo sob estresse hídrico.
+              </p>
+            </header>
+
+            <div class="cultura-layout">
+              <div class="cultura-texto">
+                <p class="cultura-citacao">
+                  “Eu uso os produtos Litho Plant há mais de 8 anos. Já usei praticamente toda a linha.
+                  Tive uma lavoura que recebeu o tratamento Litho Plant desde o início e mesmo enfrentando
+                  um período de seca, ficando aproximadamente 25 dias sem receber água, ela produziu,
+                  aos 2 anos de idade, 42 sacas de café/ha.”
+                </p>
+
+                <p class="cultura-autor">
+                  <strong>Produtor:</strong> Deângelo Rigatto<br>
+                  <strong>Propriedade:</strong> Sítio Rigatto – Córrego Veloso, Chumbado – Sooretama/ES
+                </p>
+
+                <p class="cultura-extra">
+                  O uso contínuo dos biofertilizantes Litho Plant fortalece o sistema radicular,
+                  melhora o aproveitamento de água e nutrientes e ajuda a manter a lavoura produtiva em anos desafiadores.
+                </p>
+
+                <a href="https://lithoplant.com.br/resultados-e-depoimentos/litho-plant-na-soja/"
+                   target="_blank" class="cultura-link">
+                  Ver mais resultados em soja
+                </a>
+              </div>
+
+              <figure class="cultura-midia">
+                <img src="resultados/soja/soja.jpg" alt="Lavoura de soja com manejo Litho Plant">
+                <figcaption>
+                  Lavoura de soja manejada com Litho Plant em área comercial acompanhada pela equipe técnica.
+                </figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- CAFÉ – CAPAS 2x2 + PLAY -->
+          <article class="cultura-bloco" data-cultura="cafe">
+            <header class="cultura-header">
+              <p class="cultura-tag">Café</p>
+              <h2>Resultados no café em diferentes regiões</h2>
+              <p class="cultura-intro">
+                Litho Plant nasceu do conhecimento e experiência de profissionais da área agronômica.
+                Assista aos depoimentos abaixo.
+              </p>
+            </header>
+
+            <div class="cultura-layout coluna-unica">
+              <div class="cafe-videos-lista">
+
+                <!-- Penha -->
+                <article class="cafe-video-item">
+                  <button class="cafe-video-cover" data-video-id="xEJ4QSoSxXg">
+                    <img src="https://i.ytimg.com/vi/xEJ4QSoSxXg/maxresdefault.jpg"
+                         alt="Produtora Penha Piont - Nova Venécia/ES" loading="lazy">
+                    <span class="play-icon"></span>
+                  </button>
+                  <div class="cafe-video-texto">
+                    <p class="cafe-video-titulo">Produtora: Penha Piont</p>
+                    <p class="cafe-video-meta">Nova Venécia/ES</p>
+                  </div>
+                </article>
+
+                <!-- Ednei -->
+                <article class="cafe-video-item">
+                  <button class="cafe-video-cover" data-video-id="5fRUqwA9Pzs">
+                    <img src="https://i.ytimg.com/vi/5fRUqwA9Pzs/maxresdefault.jpg"
+                         alt="Produtor Ednei Araujo - Paraguaçu/MG" loading="lazy">
+                    <span class="play-icon"></span>
+                  </button>
+                  <div class="cafe-video-texto">
+                    <p class="cafe-video-titulo">Produtor: Ednei Araujo</p>
+                    <p class="cafe-video-meta">Paraguaçu/MG</p>
+                  </div>
+                </article>
+
+                <!-- Lucas -->
+                <article class="cafe-video-item">
+                  <button class="cafe-video-cover" data-video-id="xcPAgojhCm8">
+                    <img src="https://i.ytimg.com/vi/xcPAgojhCm8/maxresdefault.jpg"
+                         alt="Produtor Lucas Campana - Nova Venécia/ES" loading="lazy">
+                    <span class="play-icon"></span>
+                  </button>
+                  <div class="cafe-video-texto">
+                    <p class="cafe-video-titulo">Produtor: Lucas Campana</p>
+                    <p class="cafe-video-meta">Nova Venécia/ES</p>
+                  </div>
+                </article>
+
+                <!-- Marlus -->
+                <article class="cafe-video-item">
+                  <button class="cafe-video-cover" data-video-id="u91mvCKfuqQ">
+                    <img src="https://i.ytimg.com/vi/u91mvCKfuqQ/maxresdefault.jpg"
+                         alt="Produtor Marlus Geizer - Ecoporanga/ES" loading="lazy">
+                    <span class="play-icon"></span>
+                  </button>
+                  <div class="cafe-video-texto">
+                    <p class="cafe-video-titulo">Produtor: Marlus Geizer</p>
+                    <p class="cafe-video-meta">Ecoporanga/ES</p>
+                  </div>
+                </article>
+
+                <!-- Adair -->
+                <article class="cafe-video-item">
+                  <button class="cafe-video-cover" data-video-id="JzRAVpdI6tc">
+                    <img src="https://i.ytimg.com/vi/JzRAVpdI6tc/maxresdefault.jpg"
+                         alt="Produtor Adair Francisco - Barra de São Francisco/ES" loading="lazy">
+                    <span class="play-icon"></span>
+                  </button>
+                  <div class="cafe-video-texto">
+                    <p class="cafe-video-titulo">Produtor: Adair Francisco</p>
+                    <p class="cafe-video-meta">Assentamento Três Corações – Barra de São Francisco/ES</p>
+                  </div>
+                </article>
+
+                <!-- Erasmo -->
+                <article class="cafe-video-item">
+                  <button class="cafe-video-cover" data-video-id="nikos0Wsaps">
+                    <img src="https://i.ytimg.com/vi/nikos0Wsaps/maxresdefault.jpg"
+                         alt="Produtor Erasmo Carlos Martins - Jaguaré/ES" loading="lazy">
+                    <span class="play-icon"></span>
+                  </button>
+                  <div class="cafe-video-texto">
+                    <p class="cafe-video-titulo">Produtor: Erasmo Carlos Martins</p>
+                    <p class="cafe-video-meta">Distrito de Fátima – Jaguaré/ES</p>
+                  </div>
+                </article>
+
+                <!-- Deângelo -->
+                <article class="cafe-video-item">
+                  <button class="cafe-video-cover" data-video-id="0q3X4iTxjvA">
+                    <img src="https://i.ytimg.com/vi/0q3X4iTxjvA/maxresdefault.jpg"
+                         alt="Produtor Deângelo Rigatto - Sooretama/ES" loading="lazy">
+                    <span class="play-icon"></span>
+                  </button>
+                  <div class="cafe-video-texto">
+                    <p class="cafe-video-titulo">Produtor: Deângelo Rigatto</p>
+                    <p class="cafe-video-meta">Sooretama/ES</p>
+                  </div>
+                </article>
+
+                <!-- Samuel / Ailton -->
+                <article class="cafe-video-item">
+                  <button class="cafe-video-cover" data-video-id="NvL1NnSHnR4">
+                    <img src="https://i.ytimg.com/vi/NvL1NnSHnR4/maxresdefault.jpg"
+                         alt="Produtor Samuel do Carmo e Téc. Ailton Vieira - Água Doce do Norte/ES" loading="lazy">
+                    <span class="play-icon"></span>
+                  </button>
+                  <div class="cafe-video-texto">
+                    <p class="cafe-video-titulo">Produtor: Samuel do Carmo</p>
+                    <p class="cafe-video-meta">Téc. Ailton Vieira – Sítio Beija Flor – Água Doce do Norte/ES</p>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+          </article>
+
+          <!-- MAMÃO -->
+          <article class="cultura-bloco" data-cultura="mamao">
+            <header class="cultura-header">
+              <p class="cultura-tag">Mamão</p>
+              <h2>PDM em mamão: eficiência medida em campo</h2>
+              <p class="cultura-intro">
+                Programa de Desenvolvimento de Mercado em área comercial de mamão, comparando área Litho Plant com área testemunha.
+              </p>
+            </header>
+
+            <div class="cultura-layout">
+              <div class="cultura-texto">
+                <p class="cultura-citacao">
+                  O PDM mede a eficiência agronômica das tecnologias Litho Plant em condições reais de produção,
+                  com acompanhamento técnico e comparações visual e de produtividade.
+                </p>
+
+                <p class="cultura-autor">
+                  <strong>Parceiro:</strong> Caliman Agrícola<br>
+                  <strong>Cultura:</strong> Mamão Golden – região produtora do Espírito Santo
+                </p>
+
+                <p class="cultura-extra">
+                  Na área tratada com Litho Plant, observou-se melhor desenvolvimento vegetativo, frutos mais padronizados
+                  e maior retorno econômico em comparação à área com manejo convencional.
+                </p>
+
+                <a href="https://lithoplant.com.br/resultado/pdm-caliman-agricola-mamao/"
+                   target="_blank" class="cultura-link">
+                  Ver detalhes do PDM em mamão
+                </a>
+              </div>
+
+              <figure class="cultura-midia cultura-midia-carousel">
+                <div class="carousel" id="carousel-mamao">
+                  <img src="resultados/mamao/mamao.jpg"  alt="PDM mamão - visão geral da área">
+                  <img src="resultados/mamao/mamao1.jpg" alt="PDM mamão - detalhe 1">
+                  <img src="resultados/mamao/mamao2.jpg" alt="PDM mamão - detalhe 2">
+                  <img src="resultados/mamao/mamao3.jpg" alt="PDM mamão - detalhe 3">
+                  <img src="resultados/mamao/mamao4.jpg" alt="PDM mamão - detalhe 4">
+                  <img src="resultados/mamao/mamao5.jpg" alt="PDM mamão - detalhe 5">
+                  <img src="resultados/mamao/mamao6.jpg" alt="PDM mamão - detalhe 6">
+                  <img src="resultados/mamao/mamao7.jpg" alt="PDM mamão - detalhe 7">
+                  <img src="resultados/mamao/mamao8.jpg" alt="PDM mamão - detalhe 8">
+                </div>
+                <figcaption>
+                  Sequência de imagens do PDM em mamão, mostrando diferenças entre área Litho Plant e área testemunha.
+                </figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- PIMENTÃO -->
+          <article class="cultura-bloco" data-cultura="pimenta">
+            <header class="cultura-header">
+              <p class="cultura-tag">Pimentão</p>
+              <h2>Resultados em Pimentão Block com Litho Plant</h2>
+              <p class="cultura-intro">
+                Registro visual do manejo com Litho Plant em pimentão tipo Block, evidenciando vigor e enchimento de frutos.
+              </p>
+            </header>
+
+            <div class="cultura-layout">
+              <div class="cultura-texto">
+                <p class="cultura-citacao">
+                  Nas áreas tratadas com Litho Plant, o pimentão apresenta plantas mais equilibradas, com melhor pegamento de flores
+                  e frutos mais padronizados, contribuindo para maior produtividade e qualidade comercial.
+                </p>
+
+                <p class="cultura-autor">
+                  <strong>Mais informações:</strong><br>
+                  Cultura: Pimentão Block<br>
+                  Local: Caxixe – Venda Nova do Imigrante-ES
+                </p>
+
+                <p class="cultura-extra">
+                  O manejo nutricional com biofertilizantes Litho Plant favorece o enraizamento, a sanidade foliar
+                  e o enchimento de frutos, reduzindo perdas por descarte e melhorando o retorno por caixa colhida.
+                </p>
+              </div>
+
+              <figure class="cultura-midia">
+                <img src="resultados/pimenta/pimentao-block.jpg" alt="Pimentão Block manejado com Litho Plant em Caxixe – Venda Nova do Imigrante-ES">
+                <figcaption>
+                  Talhão de pimentão Block com Litho Plant em Caxixe – Venda Nova do Imigrante-ES.
+                </figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- FRUTAS (Melancia) -->
+          <article class="cultura-bloco" data-cultura="frutas">
+            <header class="cultura-header">
+              <p class="cultura-tag">Frutas</p>
+              <h2>Resultado em melancia com Litho Plant</h2>
+              <p class="cultura-intro">
+                Manejo com Litho Plant em área de melancia, com foco em vigor vegetativo, pegamento e enchimento de frutos.
+              </p>
+            </header>
+
+            <div class="cultura-layout">
+              <div class="cultura-texto">
+                <p class="cultura-citacao">
+                  As plantas conduzidas com Litho Plant apresentam melhor desenvolvimento de ramas, frutos mais uniformes
+                  e maior peso médio, favorecendo o fechamento de carga com padrões mais comerciais.
+                </p>
+
+                <p class="cultura-autor">
+                  <strong>Mais informações:</strong><br>
+                  Cultura: Melancia&nbsp; |&nbsp; Produtor: Marciano Rigatto<br>
+                  Local: Chumbado – Sooretama/ES
+                </p>
+
+                <p class="cultura-extra">
+                  O programa Litho Plant auxilia na formação de um sistema radicular mais eficiente
+                  e melhora o aproveitamento de água e nutrientes, resultando em lavouras de melancia equilibradas e produtivas.
+                </p>
+              </div>
+
+              <figure class="cultura-midia cultura-midia-carousel">
+                <div class="carousel" id="carousel-frutas">
+                  <img src="resultados/frutas/melancia1.jpg" alt="Melancia com manejo Litho Plant - imagem 1">
+                  <img src="resultados/frutas/melancia2.jpg" alt="Melancia com manejo Litho Plant - imagem 2">
+                  <img src="resultados/frutas/melancia3.jpg" alt="Melancia com manejo Litho Plant - imagem 3">
+                </div>
+                <figcaption>
+                  Sequência de imagens da melancia manejada com Litho Plant na propriedade de Marciano Rigatto, em Chumbado – Sooretama/ES.
+                </figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- COCO -->
+          <article class="cultura-bloco" data-cultura="coco">
+            <header class="cultura-header">
+              <p class="cultura-tag">Coco</p>
+              <h2>Coqueiros após 150 dias de tratamento com Litho Plant</h2>
+              <p class="cultura-intro">
+                Registro visual de plantas de coco sob programa Litho Plant, 150 dias após o início do manejo.
+              </p>
+            </header>
+
+            <div class="cultura-layout">
+              <div class="cultura-texto">
+                <p class="cultura-citacao">
+                  As plantas apresentam melhor enfolhamento, cachos mais cheios e frutos com maior peso médio,
+                  indicando maior eficiência no uso de água e nutrientes ao longo do ciclo.
+                </p>
+
+                <p class="cultura-autor">
+                  <strong>Mais informações:</strong><br>
+                  Registro visual das plantas após 150 dias de tratamento<br>
+                  Proprietário: Clóvis Otávio Rampinelli<br>
+                  Local: Fazenda Conquista – Estrada dos Comboios, Regência – Linhares-ES
+                </p>
+
+                <p class="cultura-extra">
+                  O manejo com Litho Plant contribui para um sistema radicular mais ativo e plantas mais resistentes a estresses,
+                  sustentando maior produtividade e qualidade dos frutos ao longo do ano.
+                </p>
+              </div>
+
+              <figure class="cultura-midia">
+                <img src="resultados/coco/coco.jpg" alt="Coqueiros após 150 dias de tratamento com Litho Plant na Fazenda Conquista">
+                <figcaption>
+                  Coqueiros da Fazenda Conquista, em Regência – Linhares-ES, após 150 dias de tratamento com Litho Plant.
+                </figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- MILHO – CAPA + PLAY + AUTOPLAY -->
+          <article class="cultura-bloco" data-cultura="milho">
+            <header class="cultura-header">
+              <p class="cultura-tag">Milho</p>
+              <h2>Resultado em milho com Litho Plant</h2>
+              <p class="cultura-intro">
+                Depoimento em área de milho mostrando os resultados do manejo com Litho Plant em Paraguaçu/MG.
+              </p>
+            </header>
+
+            <div class="cultura-layout coluna-unica">
+              <div class="cultura-texto">
+                <p class="cultura-citacao">
+                  O produtor destaca maior enraizamento, plantas mais vigorosas e espigas melhor formadas
+                  nas áreas tratadas com Litho Plant, resultando em ganhos de produtividade.
+                </p>
+
+                <p class="cultura-autor">
+                  <strong>Mais informações:</strong><br>
+                  Produtor: Régis Rodrigues<br>
+                  Local: Paraguaçu/MG
+                </p>
+
+                <p class="cultura-extra">
+                  O uso da Litho Plant favorece o arranque inicial, a sanidade e o enchimento de grãos,
+                  contribuindo para lavouras de milho mais uniformes e produtivas.
+                </p>
+              </div>
+
+              <div class="cultura-midia">
+                <button class="cafe-video-cover" data-video-id="AKm3wdb8qBc">
+                  <img
+                    src="https://i.ytimg.com/vi/AKm3wdb8qBc/maxresdefault.jpg"
+                    alt="Depoimento em milho - Produtor Régis Rodrigues - Paraguaçu/MG"
+                    loading="lazy">
+                  <span class="play-icon"></span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </section>
+
       </div>
     </section>
 
-    <!-- CTA FINAL COM TEXTO MOTIVACIONAL -->
-    <section class="cta-section" id="contato">
-      <div class="container">
-        <h2 class="cta-title">
-          Com a Linhagro, sua lavoura não depende de sorte. Depende de manejo.
-        </h2>
-        <p class="cta-text">
-          Cada depoimento que você viu aqui não é apenas uma história bonita. É resultado de solo vivo, diagnóstico bem feito
-          e decisões técnicas aplicadas safra após safra.
-        </p>
-        <p class="cta-text">
-          Quando você escolhe caminhar com a Linhagro, não está comprando um produto. Está escolhendo construir um sistema produtivo
-          mais estável, mais rentável e mais preparado para o futuro.
-        </p>
-        <p class="cta-text">
-          Sua lavoura pode ser o próximo capítulo dessa história de sucesso. O próximo passo é simples: conversar com nosso time.
-        </p>
-        <div class="cta-buttons">
-          <a href="https://wa.me/5527999806801?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20com%20um%20consultor%20Linhagro."
-             target="_blank" rel="noopener noreferrer" class="btn-cta btn-primary">
-            <i class="fab fa-whatsapp"></i>
-            <span>Quero construir esse resultado</span>
-          </a>
-        </div>
-      </div>
+    <!-- CTA FINAL -->
+    <section class="cta-section cta-resultados">
+      <h2>Quer esses resultados na sua lavoura?</h2>
+      <p>Nossos consultores ajudam você a encaixar os produtos Litho Plant no manejo da sua cultura.</p>
+      <a href="https://wa.me/5527996950571" class="btn-cta btn-primary">
+        <i class="fab fa-whatsapp"></i> Falar com um especialista
+      </a>
     </section>
+
+    <!-- WHATSAPP -->
+    <div class="whatsapp-floating">
+      <a href="https://wa.me/5527996950571" target="_blank" class="whatsapp-floating-button">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <div class="whatsapp-floating-message">
+        <span>Fale com um consultor sobre os resultados</span>
+      </div>
+    </div>
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER / COOKIE -->
   <div id="footer-container"></div>
+  <div id="cookie-banner-container"></div>
 
-  <!-- BOTÃO WHATSAPP FLUTUANTE COM BALÃO -->
-  <div class="whatsapp-floating">
-    <a
-      href="https://wa.me/5527999806801?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20com%20um%20consultor%20Linhagro."
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Falar com a Linhagro no WhatsApp"
-      class="whatsapp-floating-button"
-    >
-      <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <div class="whatsapp-floating-message">
-      <span>Fale com um consultor</span>
-    </div>
-  </div>
-
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   <script src="../assets/components-loader.js"></script>
   <script src="../assets/js/components/header.js"></script>
   <script src="../assets/js/paginas/resultados.js"></script>
-
 </body>
 </html>

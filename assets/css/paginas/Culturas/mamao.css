@@ -1,0 +1,392 @@
+/* ==========================================
+ * PÁGINA CULTURA - MAMÃO
+ * ========================================== */
+
+.cultura-detalhe-page {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* Hero */
+
+.cultura-hero {
+  background: radial-gradient(circle at top left, #22c55e 0%, #16a34a 35%, #0f766e 100%);
+  color: #ffffff;
+  padding: 6.5rem 1.8rem 3rem;
+  text-align: center;
+}
+
+.cultura-hero-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cultura-hero-textos {
+  max-width: 780px; /* MAIS LARGO PARA CABER A FRASE */
+  margin: 0 auto;
+}
+
+.cultura-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.16);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.8rem;
+}
+
+.cultura-hero-tag i {
+  font-size: 0.85rem;
+}
+
+/* PADRÃO NOVO PARA NÃO QUEBRAR LINHA EM DESKTOP */
+.cultura-hero-title {
+  font-size: 2.05rem;   /* menor que o 2.4rem original */
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.15;
+}
+
+/* Navegação simples */
+
+.cultura-nav {
+  padding: 1.4rem 1.5rem 0.6rem;
+  background: #f8fafc;
+}
+
+.cultura-nav .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cultura-hero-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #174283;
+  text-decoration: none;
+}
+
+.cultura-hero-back i {
+  font-size: 0.9rem;
+}
+
+.cultura-hero-back:hover {
+  text-decoration: underline;
+}
+
+/* Seção "A APLICAÇÃO" centralizada */
+
+.cultura-aplicacao {
+  padding: 1.8rem 1.5rem 2.2rem;
+  background: #f8fafc;
+}
+
+.cultura-aplicacao .container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cultura-aplicacao-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #16a34a;
+  margin-bottom: 0.4rem;
+}
+
+.cultura-aplicacao-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  color: #102a43;
+  margin-bottom: 0.9rem;
+}
+
+.cultura-aplicacao-texto {
+  font-size: 0.98rem;
+  color: #4b5a6b;
+  line-height: 1.8;
+  margin-bottom: 0.7rem;
+}
+
+.cultura-aplicacao-subtexto {
+  font-size: 0.98rem;
+  color: #4b5a6b;
+  line-height: 1.7;
+}
+
+/* Benefícios – sem título de seção */
+
+.cultura-beneficios {
+  padding: 1.5rem 1.5rem 3.5rem;
+  background: #ffffff;
+}
+
+.cultura-beneficios .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cultura-beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.8rem;
+}
+
+.beneficio-card {
+  background: radial-gradient(circle at top left, #ecfff7 0%, #f7fafc 45%, #edf2f7 100%);
+  border-radius: 16px;
+  padding: 1.5rem 1.4rem 1.6rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.beneficio-icon {
+  font-size: 1.4rem;
+  color: #16a34a;
+}
+
+.beneficio-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #102a43;
+}
+
+.beneficio-text {
+  font-size: 0.95rem;
+  color: #4b5a6b;
+  line-height: 1.6;
+}
+
+/* Outras culturas */
+
+.cultura-outras {
+  padding: 3rem 1.5rem 4rem;
+  background: #f1f5f9;
+}
+
+.cultura-outras .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cultura-outras-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #174283;
+  margin-bottom: 0.4rem;
+}
+
+.cultura-outras-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  color: #0f172a;
+  margin-bottom: 1.8rem;
+}
+
+.cultura-outras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.cultura-outra-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.2rem 1.2rem 1.3rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cultura-outra-nome {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.6rem;
+}
+
+.cultura-outra-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #174283;
+  text-decoration: none;
+}
+
+.cultura-outra-link i {
+  font-size: 0.85rem;
+}
+
+.cultura-outra-link:hover {
+  text-decoration: underline;
+}
+
+/* CTA final */
+
+.cultura-cta-final {
+  padding: 4rem 1.5rem;
+  background: radial-gradient(circle at top, #111827 0%, #020617 55%);
+  color: #ffffff;
+  text-align: center;
+}
+
+.cultura-cta-final .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cultura-cta-title {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1.2rem;
+}
+
+.cultura-cta-text {
+  font-size: 1rem;
+  opacity: 0.96;
+  line-height: 1.7;
+}
+
+.cultura-cta-buttons {
+  margin-top: 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.cultura-cta-back {
+  color: #e5f6ff;
+}
+
+/* WhatsApp flutuante */
+
+.whatsapp-floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.whatsapp-floating-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  font-size: 28px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.whatsapp-floating-button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+  background-color: #1ebe5b;
+}
+
+.whatsapp-floating-message {
+  position: relative;
+  max-width: 220px;
+  background: linear-gradient(135deg, #f3e8ff 0%, #e0d4ff 100%);
+  color: #1f2933;
+  border-radius: 18px;
+  padding: 8px 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  text-align: left;
+  word-break: break-word;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.whatsapp-floating-message span {
+  display: block;
+}
+
+.whatsapp-floating-message.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Responsivo */
+
+@media (max-width: 768px) {
+  .cultura-hero {
+    padding: 4.2rem 1.4rem 2.4rem;
+  }
+
+  .cultura-hero-title {
+    font-size: 1.9rem; /* um pouco menor também no tablet */
+  }
+
+  .cultura-cta-title {
+    font-size: 1.8rem;
+  }
+
+  .whatsapp-floating {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .whatsapp-floating-button {
+    width: 52px;
+    height: 52px;
+    font-size: 26px;
+  }
+
+  .whatsapp-floating-message {
+    max-width: 190px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cultura-hero-title {
+    font-size: 1.7rem;
+  }
+
+  .whatsapp-floating-message {
+    display: none;
+  }
+}

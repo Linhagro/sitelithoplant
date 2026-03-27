@@ -3,160 +3,286 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Confira os produtos da Linhagro - Fertilizantes, biofertilizantes e soluções para aumentar a produtividade da sua lavoura.">
+  <title>Produtos - Litho Plant</title>
+  <meta name="description" content="Conheça os biofertilizantes, fertilizantes especiais e condicionadores de solo Litho Plant para potencializar o manejo da sua lavoura.">
 
-  <title>Nossos Produtos - Linhagro</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="../assets/imagens/favicon-32x32.png">
-
-  <!-- Fontes Google -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- CSS -->
+  <!-- CSS globais -->
   <link rel="stylesheet" href="../assets/css/reset.css">
   <link rel="stylesheet" href="../assets/css/variaveis.css">
   <link rel="stylesheet" href="../assets/css/componentes.css">
   <link rel="stylesheet" href="../assets/css/components/header.css">
   <link rel="stylesheet" href="../assets/css/components/footer.css">
-  <link rel="stylesheet" href="../assets/css/paginas/produtos.css">
   <link rel="stylesheet" href="../assets/css/cookie-banner.css">
-</head>
-<body>
+  <link rel="stylesheet" href="../assets/css/paginas/produtos.css">
 
-  <!-- HEADER -->
+  <!-- Fontes e ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2b6cd552f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
   <div id="header-container"></div>
 
-  <!-- CONTEÚDO DA PÁGINA -->
   <main class="produtos-page">
 
-    <!-- Hero -->
-    <section class="hero-page">
-      <div class="container">
-        <h1 class="page-title">Nossos Produtos</h1>
-        <p class="page-subtitle">Soluções completas para sua produção</p>
+    <!-- HERO -->
+    <section class="hero-page hero-produtos">
+      <div class="hero-content">
+        <span class="hero-pill"><i class="fas fa-flask"></i> Produtos Litho Plant</span>
+        <h1>Produtos Litho Plant para potencializar o manejo</h1>
+        <p>Biofertilizantes, fertilizantes especiais e condicionadores de solo que nutrem, revitalizam e fortalecem a produtividade das lavouras.</p>
       </div>
     </section>
 
-    <!-- Busca e Filtros -->
-    <section class="filtros-section">
-      <div class="container">
-        <div class="filtros-container">
-
-          <!-- Barra de Busca -->
-          <div class="busca-box">
-            <i class="fas fa-search"></i>
-            <input 
-              type="text" 
-              id="busca-produto" 
-              placeholder="Buscar produto..."
-              class="busca-input"
-            >
-          </div>
-
-          <!-- Filtros por Categoria -->
-          <div class="filtros-categorias">
-            <button class="filtro-btn active" data-categoria="todos">
-              <i class="fas fa-th"></i>
-              <span>Todos</span>
-            </button>
-            <button class="filtro-btn" data-categoria="fertilizantes">
-              <i class="fas fa-flask"></i>
-              <span>Fertilizantes</span>
-            </button>
-            <button class="filtro-btn" data-categoria="biofertilizantes">
-              <i class="fas fa-leaf"></i>
-              <span>Biofertilizantes</span>
-            </button>
-            <button class="filtro-btn" data-categoria="condicionadores">
-              <i class="fas fa-seedling"></i>
-              <span>Condicionadores</span>
-            </button>
-            <button class="filtro-btn" data-categoria="especiais">
-              <i class="fas fa-star"></i>
-              <span>Especiais</span>
-            </button>
-          </div>
-
-        </div>
-
-        <!-- Contador de Resultados -->
-        <div class="resultados-info">
-          <p>Mostrando <strong id="total-produtos">56</strong> produtos</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Grid de Produtos -->
+    <!-- PRODUTOS SECTION -->
     <section class="produtos-section">
       <div class="container">
-        <div class="produtos-grid" id="produtos-grid">
-          <!-- Os produtos serão injetados aqui via JavaScript -->
+        <h2 class="section-title">Escolha o produto para o seu manejo</h2>
+        <p class="section-subtitle-destaque">Conheça os benefícios e aplicações dos produtos Litho Plant.</p>
+
+        <div class="produtos-filtros">
+          <button class="filtro-pill active" data-filter="todos">Todos</button>
+          <button class="filtro-pill" data-filter="biofertilizantes">Biofertilizantes</button>
+          <button class="filtro-pill" data-filter="fertilizantes">Fertilizantes</button>
+          <button class="filtro-pill" data-filter="condicionadores">Condicionadores</button>
+          <button class="filtro-pill" data-filter="adjuvantes">Adjuvantes</button>
+          <button class="filtro-pill" data-filter="sanitizantes">Sanitizantes</button>
         </div>
 
-        <!-- Mensagem quando não há resultados -->
-        <div class="no-results" id="no-results" style="display: none;">
-          <i class="fas fa-search"></i>
-          <h3>Nenhum produto encontrado</h3>
-          <p>Tente buscar com outros termos ou ajuste os filtros</p>
+        <div class="produtos-grid">
+          <!-- ATIVAR -->
+          <div class="produto-card" data-categoria="biofertilizantes">
+            <div class="produto-img-wrapper">
+              <img src="../assets/imagens/produtos/ATIVAR.png" alt="ATIVAR Litho Plant">
+            </div>
+            <span class="produto-tag">Biofertilizante</span>
+            <h3 class="produto-nome">ATIVAR</h3>
+            <p class="produto-desc">Complexo biofertilizante que aumenta a eficiência da adubação e estimula o metabolismo vegetal.</p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio-chip">Maior absorção</span>
+              <span class="produto-beneficio-chip">Reduz perdas</span>
+              <span class="produto-beneficio-chip">Solo mais vivo</span>
+            </div>
+          </div>
+
+          <!-- BALTIKO -->
+          <div class="produto-card" data-categoria="biofertilizantes">
+            <div class="produto-img-wrapper">
+              <img src="../assets/imagens/produtos/BALTIKO.png" alt="BALTIKO Litho Plant">
+            </div>
+            <span class="produto-tag">Biofertilizante</span>
+            <h3 class="produto-nome">BALTIKO</h3>
+            <p class="produto-desc">Bioestimulante multifuncional à base de algas e aminoácidos, promovendo vigor e resistência.</p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio-chip">Raízes fortes</span>
+              <span class="produto-beneficio-chip">Resistência a estresses</span>
+              <span class="produto-beneficio-chip">Floração intensa</span>
+            </div>
+          </div>
+
+          <!-- LITHAMIN BORO (BORO) -->
+          <div class="produto-card" data-categoria="fertilizantes">
+            <div class="produto-img-wrapper">
+              <img src="../assets/imagens/produtos/BORO.png" alt="LITHAMIN BORO Litho Plant">
+            </div>
+            <span class="produto-tag">Fertilizante</span>
+            <h3 class="produto-nome">LITHAMIN BORO</h3>
+            <p class="produto-desc">Fornecimento eficiente de boro com ação bioestimulante e absorção otimizada via foliar e solo.</p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio-chip">Fixação floral</span>
+              <span class="produto-beneficio-chip">Alta eficiência</span>
+              <span class="produto-beneficio-chip">Versatilidade</span>
+            </div>
+          </div>
+
+          <!-- CLEAN FRUIT -->
+          <div class="produto-card" data-categoria="sanitizantes">
+            <div class="produto-img-wrapper">
+              <img src="../assets/imagens/produtos/CLEAN-FRUIT.png" alt="CLEAN FRUIT Litho Plant">
+            </div>
+            <span class="produto-tag">Sanitizante</span>
+            <h3 class="produto-nome">CLEAN FRUIT</h3>
+            <p class="produto-desc">Sanitizante pós-colheita que protege frutas e hortaliças, garantindo segurança e qualidade.</p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio-chip">Biodegradável</span>
+              <span class="produto-beneficio-chip">Mais shelf life</span>
+              <span class="produto-beneficio-chip">Reduz perdas</span>
+            </div>
+          </div>
+
+          <!-- COFFEE HF -->
+          <div class="produto-card" data-categoria="fertilizantes">
+            <div class="produto-img-wrapper">
+              <img src="../assets/imagens/produtos/COFFEE.png" alt="COFFEE HF Litho Plant">
+            </div>
+            <span class="produto-tag">Fertilizante</span>
+            <h3 class="produto-nome">COFFEE HF</h3>
+            <p class="produto-desc">Fertilizante foliar completo que garante floração intensa e aumento da produção.</p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio-chip">Mais energia</span>
+              <span class="produto-beneficio-chip">Alta produtividade</span>
+              <span class="produto-beneficio-chip">Bioestimulação</span>
+            </div>
+          </div>
+
+          <!-- GLUTA PHOS -->
+          <div class="produto-card" data-categoria="fertilizantes">
+            <div class="produto-img-wrapper">
+              <img src="../assets/imagens/produtos/GLUTA.png" alt="GLUTA PHOS Litho Plant">
+            </div>
+            <span class="produto-tag">Fertilizante</span>
+            <h3 class="produto-nome">GLUTA PHOS</h3>
+            <p class="produto-desc">Fonte eficiente de fósforo e aminoácidos que impulsionam o crescimento vegetativo.</p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio-chip">Mais energia</span>
+              <span class="produto-beneficio-chip">Raízes fortes</span>
+              <span class="produto-beneficio-chip">Eficiência nutricional</span>
+            </div>
+          </div>
+
+          <!-- LITHAMIN PLUS -->
+          <div class="produto-card" data-categoria="biofertilizantes">
+            <div class="produto-img-wrapper">
+              <img src="../assets/imagens/produtos/LITHAMIN.png" alt="LITHAMIN PLUS Litho Plant">
+            </div>
+            <span class="produto-tag">Biofertilizante</span>
+            <h3 class="produto-nome">LITHAMIN PLUS</h3>
+            <p class="produto-desc">Mistura de aminoácidos e micronutrientes que recupera e fortalece lavouras sob estresse.</p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio-chip">Anti-fitotoxicidade</span>
+              <span class="produto-beneficio-chip">Alta solubilidade</span>
+              <span class="produto-beneficio-chip">Crescimento vigoroso</span>
+            </div>
+          </div>
+
+          <!-- LITHOCAL -->
+          <div class="produto-card" data-categoria="fertilizantes">
+            <div class="produto-img-wrapper">
+              <img src="../assets/imagens/produtos/LITHOCAL.png" alt="LITHOCAL Litho Plant">
+            </div>
+            <span class="produto-tag">Fertilizante</span>
+            <h3 class="produto-nome">LITHOCAL</h3>
+            <p class="produto-desc">Fonte de cálcio e magnésio nanoparticulado com extrato de algas para máxima eficiência.</p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio-chip">Mais clorofila</span>
+              <span class="produto-beneficio-chip">Raízes fortes</span>
+              <span class="produto-beneficio-chip">Alta reatividade</span>
+            </div>
+          </div>
+
+          <!-- LITHOMAG -->
+          <div class="produto-card" data-categoria="fertilizantes">
+            <div class="produto-img-wrapper">
+              <img src="../assets/imagens/produtos/LITHOMAG.png" alt="LITHOMAG Litho Plant">
+            </div>
+            <span class="produto-tag">Fertilizante</span>
+            <h3 class="produto-nome">LITHOMAG</h3>
+            <p class="produto-desc">Fonte concentrada de magnésio com base de extrato de algas para vigor e fotossíntese.</p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio-chip">Mais magnésio</span>
+              <span class="produto-beneficio-chip">Mais clorofila</span>
+              <span class="produto-beneficio-chip">Maior vigor</span>
+            </div>
+          </div>
+
+          <!-- MITTOMAX -->
+          <div class="produto-card" data-categoria="adjuvantes">
+            <div class="produto-img-wrapper">
+              <img src="../assets/imagens/produtos/MITTOMAX.png" alt="MITTOMAX Litho Plant">
+            </div>
+            <span class="produto-tag">Adjuvante</span>
+            <h3 class="produto-nome">MITTOMAX</h3>
+            <p class="produto-desc">Adjuvante agrícola com ação espalhante, penetrante e bioestimulante, essencial para drones.</p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio-chip">Melhor cobertura</span>
+              <span class="produto-beneficio-chip">Uniformidade</span>
+              <span class="produto-beneficio-chip">Bioestimulação</span>
+            </div>
+          </div>
+
+          <!-- SOMBRYT BR -->
+          <div class="produto-card" data-categoria="condicionadores">
+            <div class="produto-img-wrapper">
+              <img src="../assets/imagens/produtos/SOMBRYT.png" alt="SOMBRYT BR Litho Plant">
+            </div>
+            <span class="produto-tag">Condicionador</span>
+            <h3 class="produto-nome">SOMBRYT BR</h3>
+            <p class="produto-desc">Protetor solar foliar de alta tecnologia, reduzindo danos por radiação e aumentando qualidade.</p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio-chip">Proteção solar</span>
+              <span class="produto-beneficio-chip">Conforto térmico</span>
+              <span class="produto-beneficio-chip">Fotossíntese ideal</span>
+            </div>
+          </div>
+
+          <!-- TURFA GEL -->
+          <div class="produto-card" data-categoria="condicionadores">
+            <div class="produto-img-wrapper">
+              <img src="../assets/imagens/produtos/TURFA.png" alt="TURFA GEL Litho Plant">
+            </div>
+            <span class="produto-tag">Condicionador</span>
+            <h3 class="produto-nome">TURFA GEL</h3>
+            <p class="produto-desc">Bioestimulante e condicionador do solo que fortalece raízes e melhora a microbiota do solo.</p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio-chip">Raízes profundas</span>
+              <span class="produto-beneficio-chip">Solo fértil</span>
+              <span class="produto-beneficio-chip">Alta produtividade</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <div class="container">
-        <h2 class="cta-title">Ficou com dúvida sobre algum produto?</h2>
-        <p class="cta-text">Fale com nossos especialistas agora</p>
-        <div class="cta-buttons">
-          <a href="https://wa.me/5527996514725?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20Linhagro" target="_blank" rel="noopener noreferrer" class="btn-cta btn-primary">
-            <i class="fab fa-whatsapp"></i>
-            <span>WhatsApp</span>
-          </a>
-          <a href="consultores.html" class="btn-cta btn-secondary">
-            <i class="fas fa-users"></i>
-            <span>Falar com Consultor</span>
-          </a>
+    <!-- DESTAQUE (rotacionado via JS) -->
+    <section class="produto-destaque">
+      <div class="destaque-container">
+        <div class="destaque-img">
+          <img src="../assets/imagens/produtos/SOMBRYT.png" alt="SOMBRYT BR Produto em destaque">
+        </div>
+        <div class="destaque-texto produto-destaque-fade is-visible">
+          <span class="produto-tag destaque-tag">Produto em destaque</span>
+          <h2>SOMBRYT BR</h2>
+          <p>Protetor solar foliar com tecnologia nanoparticulada, desenvolvido em parceria com a EMBRAPA. Ideal para culturas expostas a radiação intensa e altas temperaturas.</p>
+          <div class="produto-beneficios">
+            <span class="produto-beneficio-chip">Proteção UV</span>
+            <span class="produto-beneficio-chip">Maior fixação floral</span>
+            <span class="produto-beneficio-chip">Fotossíntese equilibrada</span>
+          </div>
+          <div class="destaque-info">
+            <h4>Doses e aplicação</h4>
+            <p>Aplicar via foliar a 200–500 mL/ha conforme a cultura e intensidade solar.</p>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section cta-produtos">
+      <h2>Quer encaixar esses produtos no seu manejo?</h2>
+      <p>Nossos consultores ajudam você a montar o programa ideal para sua cultura.</p>
+      <a href="https://wa.me/5527996950571" class="btn-cta btn-primary">
+        <i class="fab fa-whatsapp"></i> Falar com consultor
+      </a>
+    </section>
+
+    <!-- WHATSAPP -->
+    <div class="whatsapp-floating">
+      <a href="https://wa.me/5527996950571" target="_blank" class="whatsapp-floating-button">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <div class="whatsapp-floating-message">
+        <span>Fale com um consultor sobre os produtos</span>
+      </div>
+    </div>
 
   </main>
 
-  <!-- FOOTER -->
   <div id="footer-container"></div>
-
-  <!-- COOKIE BANNER -->
   <div id="cookie-banner-container"></div>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   <script src="../assets/components-loader.js"></script>
   <script src="../assets/js/components/header.js"></script>
   <script src="../assets/js/paginas/produtos.js"></script>
-
-  <!-- Carregar Cookie Banner -->
-  <script>
-    async function loadCookieBanner() {
-      try {
-        const response = await fetch('../assets/components/cookie-banner.html');
-        const html = await response.text();
-        document.getElementById('cookie-banner-container').innerHTML = html;
-
-        const script = document.createElement('script');
-        script.src = '../assets/js/cookie-consent.js';
-        document.body.appendChild(script);
-      } catch (error) {
-        console.error('Erro ao carregar cookie banner:', error);
-      }
-    }
-
-    loadCookieBanner();
-  </script>
-
 </body>
 </html>

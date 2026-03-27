@@ -1,13 +1,13 @@
 ﻿/**
  * ================================================
- * FOOTER - LINHAGRO
- * Versão corrigida - SEM REPETIÇÕES
+ * FOOTER - LITHOPLANT
+ * Versão com paleta Azul/Amarelo/Verde
  * ================================================
  */
 
 /* FOOTER PRINCIPAL */
 .footer {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: linear-gradient(135deg, #0f2d5a 0%, #174283 60%, #02152f 100%);
   color: #e0e0e0;
   position: relative;
   overflow: hidden;
@@ -21,7 +21,7 @@
   right: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(244, 162, 97, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(248, 175, 65, 0.08) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -63,7 +63,7 @@
 .footer-description {
   font-size: 14px;
   line-height: 1.8;
-  color: #b0b0b0;
+  color: #c5d0e0;
   margin: 0 0 24px 0;
 }
 
@@ -87,19 +87,19 @@
   transition: all 0.3s ease;
   text-decoration: none;
   font-size: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .social-link:hover {
-  background: linear-gradient(135deg, #F4A261 0%, #E8965A 100%);
+  background: linear-gradient(135deg, #f8af41 0%, #f1a02a 100%);
   color: #fff;
   transform: translateY(-4px) rotate(5deg);
-  box-shadow: 0 8px 20px rgba(244, 162, 97, 0.3);
+  box-shadow: 0 8px 20px rgba(248, 175, 65, 0.35);
   border-color: transparent;
 }
 
 .social-whatsapp:hover {
-  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  background: linear-gradient(135deg, #25D366 0%, #066839 100%);
 }
 
 /* TÍTULOS */
@@ -107,7 +107,7 @@
   font-family: var(--fonte-titulos);
   font-size: 18px;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
   margin: 0 0 20px 0;
   position: relative;
   padding-bottom: 12px;
@@ -120,7 +120,7 @@
   bottom: 0;
   width: 40px;
   height: 3px;
-  background: linear-gradient(90deg, #F4A261 0%, transparent 100%);
+  background: linear-gradient(90deg, #f8af41 0%, transparent 100%);
   border-radius: 2px;
 }
 
@@ -129,35 +129,39 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  display: block;              /* garante coluna mesmo se algo aplicar flex */
 }
 
 .footer-links li {
+  display: block;              /* cada item em uma linha */
   margin: 0 0 12px 0;
 }
 
 .footer-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #b0b0b0;
+  position: relative;
+  display: inline-block;
+  padding-left: 18px;          /* espaço para a setinha */
+  color: #c5d0e0;
   text-decoration: none;
   font-size: 14px;
   transition: all 0.3s ease;
 }
 
-.footer-links a i {
-  font-size: 12px;
-  color: #F4A261;
-  transition: all 0.3s ease;
+/* setinha antes do texto */
+.footer-links a::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #f8af41;
+  font-size: 14px;
+  line-height: 1;
 }
 
+/* hover */
 .footer-links a:hover {
-  color: #F4A261;
-  padding-left: 8px;
-}
-
-.footer-links a:hover i {
-  transform: translateX(4px);
+  color: #f8af41;
+  padding-left: 22px;
 }
 
 /* CONTATO */
@@ -177,7 +181,7 @@
 
 .contact-item i {
   font-size: 18px;
-  color: #F4A261;
+  color: #f8af41;
   min-width: 20px;
   flex-shrink: 0;
 }
@@ -192,7 +196,7 @@
 .contact-info strong {
   font-size: 12px;
   font-weight: 600;
-  color: #808080;
+  color: #90a4c0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-right: 6px;
@@ -207,37 +211,37 @@
 }
 
 .contact-info a:hover {
-  color: #F4A261;
+  color: #f8af41;
 }
 
 /* FOOTER BOTTOM */
 .footer-bottom {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 10, 30, 0.55);
   padding: 32px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   text-align: center;
 }
 
 .footer-mission {
   font-size: 15px;
   line-height: 1.6;
-  color: #b0b0b0;
+  color: #c5d0e0;
   margin: 0 auto 16px;
   max-width: 700px;
 }
 
 .footer-copyright {
   font-size: 14px;
-  color: #b0b0b0;
+  color: #c5d0e0;
   margin: 0 auto 20px;
 }
 
-.footer-copyright strong {
-  color: #F4A261;
+.footer copyright strong {
+  color: #f8af41;
   font-weight: 600;
 }
 
-/* LINKS LEGAIS (INLINE) */
+/* LINKS LEGAIS */
 .footer-bottom-links {
   display: flex;
   align-items: center;
@@ -248,24 +252,24 @@
 
 .footer-bottom-links a {
   font-size: 13px;
-  color: #b0b0b0;
+  color: #c5d0e0;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-bottom-links a:hover {
-  color: #F4A261;
+  color: #f8af41;
 }
 
 .footer-bottom-links .separator {
-  color: #606060;
+  color: #60708f;
   font-size: 13px;
 }
 
-/* Botão "Gerenciar Cookies" no footer */
+/* Botão "Gerenciar Cookies" */
 .footer-cookie-link {
   font-size: 13px;
-  color: #b0b0b0;
+  color: #c5d0e0;
   background: none;
   border: none;
   padding: 0;
@@ -276,7 +280,7 @@
 }
 
 .footer-cookie-link:hover {
-  color: #F4A261;
+  color: #f8af41;
 }
 
 /* BOTÃO VOLTAR AO TOPO */
@@ -286,13 +290,13 @@
   right: 30px;
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #F4A261 0%, #E8965A 100%);
+  background: linear-gradient(135deg, #f8af41 0%, #066839 100%);
   color: #fff;
   border: none;
   border-radius: 50%;
   font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(244, 162, 97, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -306,7 +310,7 @@
 
 .back-to-top:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(244, 162, 97, 0.5);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
 }
 
 .back-to-top:active {

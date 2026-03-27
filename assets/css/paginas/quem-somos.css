@@ -1,396 +1,497 @@
 /* ==========================================
- * PÁGINA QUEM SOMOS - TEMA LARANJA
+ * PÁGINA QUEM SOMOS - LITHO PLANT
  * ========================================== */
 
 .quem-somos-page {
   min-height: 100vh;
-  background-color: #f8f9fa;
+  background-color: #f5f7fb;
 }
 
-/* Hero da Página */
+/* HERO SIMPLES */
+
 .hero-page {
-  background: linear-gradient(90deg, #ff9a3c 0%, #ff5500 100%);
-  padding: 7rem 2rem 4rem;
+  background: radial-gradient(circle at top left, #1f5bb3 0%, #174283 35%, #0b1b33 80%);
+  color: #ffffff;
+}
+
+.hero-page.hero-page-slim {
+  padding: 7.5rem 0 3.2rem;
+}
+
+.hero-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-page-container-slim {
+  justify-content: center;
+}
+
+.hero-page-text {
+  max-width: 540px;
+}
+
+.hero-page-text-centered {
   text-align: center;
-  color: white;
-  margin-bottom: 0;
+  max-width: 640px;
+}
+
+.hero-badge-qs {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .page-title {
+  font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
   font-weight: 800;
-  margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  margin: 1.1rem 0 0.75rem;
 }
 
 .page-subtitle {
-  font-size: 1.25rem;
-  opacity: 0.95;
-  max-width: 600px;
-  margin: 0 auto;
-  white-space: nowrap;
+  font-size: 1.1rem;
+  opacity: 0.96;
+  max-width: 520px;
 }
 
-/* ==========================================
-   TIPOGRAFIA UNIFICADA
-   ========================================== */
+.hero-page-text-centered .page-subtitle {
+  margin: 0 auto;
+}
 
-.section-title,
-.evolucao-titulo {
+/* TITLES */
+
+.section-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 2rem;
-  color: #2c3e50;
+  color: #174283;
 }
 
-.historia-text .section-description,
-.evolucao-texto {
+/* TIMELINE / HISTÓRIA */
+
+.history-timeline {
+  padding: 3.5rem 0 4.5rem;
+  background: #ffffff;
+}
+
+.history-header {
+  max-width: 720px;
+  margin: 0 auto 2.4rem;
+  text-align: center;
+}
+
+.history-tag {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(23, 66, 131, 0.08);
+  color: #174283;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.history-intro {
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* coluna esquerda (steps) */
+
+.history-steps {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.history-step {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 16px;
+  opacity: 0.35;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.history-step.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.history-step-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.history-bullet {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #174283;
+  background: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.history-step.is-active .history-bullet {
+  background: #174283;
+}
+
+.history-line {
+  flex: 1;
+  width: 2px;
+  margin-top: 4px;
+  background: linear-gradient(to bottom, rgba(23, 66, 131, 0.2), rgba(23, 66, 131, 0.05));
+}
+
+.history-line-end {
+  background: none;
+}
+
+.history-step-content h3.history-step-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.4rem;
+}
+
+.history-step-content p {
+  font-size: 0.96rem;
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 0.35rem;
+}
+
+/* coluna direita (highlight imagem) */
+
+.history-highlight {
+  display: flex;
+  align-items: stretch;
+}
+
+.history-highlight-card {
+  border-radius: 24px;
+  overflow: hidden;
+  background: #0b1b33;
+  box-shadow: 0 18px 46px rgba(15, 46, 76, 0.45);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.history-highlight-image-wrapper {
+  position: relative;
+  height: 100%;
+  min-height: 260px;
+  overflow: hidden;
+}
+
+.history-highlight-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: opacity 0.3s ease, transform 0.35s ease;
+}
+
+.history-image-fade-out {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+.history-image-fade-in {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.history-highlight-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 55%);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+/* PORTFÓLIO */
+
+.portfolio-litho-clean {
+  padding: 4rem 0 4.3rem;
+  background: #f5f7fb;
+}
+
+.portfolio-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+}
+
+.portfolio-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(23, 66, 131, 0.08);
+  color: #174283;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.portfolio-title {
+  margin-bottom: 0.6rem;
+}
+
+.portfolio-subtitle {
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.portfolio-grid-clean {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.portfolio-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.6rem 1.4rem;
+  box-shadow: 0 8px 26px rgba(15, 46, 76, 0.08);
+  border: 1px solid rgba(23, 66, 131, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.portfolio-card-main {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #174283 0%, #1f5bb3 40%, #066839 100%);
+  color: #ffffff;
+  box-shadow: 0 14px 38px rgba(15, 46, 76, 0.35);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 38px rgba(15, 46, 76, 0.18);
+  border-color: rgba(23, 66, 131, 0.18);
+}
+
+.portfolio-card-header h3 {
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+}
+
+.portfolio-card-main h3 {
+  font-size: 1.25rem;
+}
+
+.portfolio-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  background: rgba(23, 66, 131, 0.08);
+  color: #174283;
+}
+
+.portfolio-card-main .portfolio-pill {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.portfolio-card p {
+  font-size: 0.96rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.portfolio-card-main p {
+  color: #e5f2ff;
+}
+
+/* MISSÃO, VISÃO, VALORES */
+
+.mission-vision {
+  padding: 4.2rem 0;
+  background: #ffffff;
+}
+
+.mission-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.mission-left {
+  max-width: 620px;
+}
+
+.mission-title {
+  margin-bottom: 0.8rem;
+}
+
+.mission-intro {
   font-size: 1rem;
   line-height: 1.8;
-  color: #5a6c7d;
-  margin-bottom: 1rem;
-}
-
-.historia-text .section-description strong,
-.evolucao-texto strong {
-  color: #F4A261;
-  font-weight: 600;
-}
-
-/* ==========================================
-   BLOCO 1 - NOSSA ORIGEM (TEXTO + IMAGEM)
-   ========================================== */
-
-.nossa-historia {
-  padding: 4rem 2rem;
-  background-color: white;
-}
-
-.nossa-historia .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.historia-content {
-  display: grid;
-  grid-template-columns: 3fr 4fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.historia-image {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.historia-image-wrapper {
-  width: 100%;
-  max-width: 720px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
-}
-
-.historia-foto {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* ==========================================
-   BLOCO 2 - LINHA DE EVOLUÇÃO (3 ETAPAS)
-   ========================================== */
-
-.visao-compromisso-section {
-  padding: 3.5rem 2rem 3.5rem;
-  background: #f3f5f7;
-}
-
-.visao-compromisso-section .container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.evolucao-etapa {
-  text-align: left;
-  padding: 0 0 2rem;
-}
-
-.evolucao-label {
-  display: inline-block;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #F4A261;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.evolucao-titulo {
+  color: #4b5563;
   margin-bottom: 0.75rem;
 }
 
-.evolucao-divisor {
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  margin: 0 0 2rem;
-}
-
-.lista-compromisso {
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0 0.75rem;
-}
-
-.lista-compromisso li {
-  position: relative;
-  padding-left: 1.2rem;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #5a6c7d;
-  margin-bottom: 0.5rem;
-}
-
-.lista-compromisso li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #F4A261;
-  font-weight: 700;
-}
-
-/* ==========================================
-   MISSÃO, VISÃO E VALORES
-   ========================================== */
-
-.mvv-section {
-  padding: 4rem 2rem;
-  background-color: #f8f9fa;
-}
-
-.mvv-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.mvv-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.mvv-card {
-  background: white;
-  border-radius: 12px;
-  padding: 2.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.mvv-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-}
-
-.mvv-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: white;
-  margin-bottom: 1rem;
-}
-
-.mvv-icon-missao {
-  background: linear-gradient(135deg, #F4A261 0%, #E76F51 100%);
-}
-
-.mvv-icon-visao {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-}
-
-.mvv-icon-valores {
-  background: linear-gradient(135deg, #E76F51 0%, #F4A261 100%);
-}
-
-.mvv-title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #2c3e50;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.mvv-text {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #5a6c7d;
-}
-
-.mvv-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.mvv-list li {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 1rem;
-  color: #2c3e50;
-}
-
-.mvv-list li i {
-  color: #F4A261;
-  font-size: 1rem;
-  flex-shrink: 0;
-}
-
-/* ==========================================
-   NÚMEROS
-   ========================================== */
-
-.numeros-section {
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-  color: white;
-  text-align: center;
-}
-
-.numeros-section .container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.numeros-section .section-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
-  color: #ffffff;
-}
-
-.numeros-section .section-subtitle {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  margin-bottom: 3rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.numeros-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-}
-
-.numero-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  padding: 2rem 1rem;
-  transition: all 0.3s ease;
-}
-
-.numero-card:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-5px);
-}
-
-.numero-icon {
-  display: none;
-}
-
-.numero-valor {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
-  color: #ffffff;
-}
-
-.numero-label {
-  font-size: 1rem;
-  opacity: 0.9;
-  color: #ffffff;
-}
-
-/* ==========================================
-   CTA FINAL
-   ========================================== */
-
-.cta-section {
-  padding: 4rem 2rem;
-  background: linear-gradient(90deg, #ff9a3c 0%, #ff5500 100%);
-  text-align: center;
-  color: white;
-}
-
-.cta-section .container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.cta-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.cta-text {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn-cta {
+.mission-tabs {
   display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
-  border-radius: 8px;
+  padding: 4px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  margin: 1.4rem 0 0.9rem;
+}
+
+.mission-tab {
+  border: none;
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.9rem;
   font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
+  color: #4b5563;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.btn-primary {
-  background-color: #25D366;
-  color: white;
+.mission-tab.is-active {
+  background: #174283;
+  color: #ffffff;
 }
 
-.btn-primary:hover {
-  background-color: #20ba5a;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+.mission-panels {
+  position: relative;
+  min-height: 130px;
 }
 
-/* ==========================================
- * BOTÃO WHATSAPP FLUTUANTE
- * ========================================== */
+.mission-panel {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.mission-panel.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mission-panel h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.4rem;
+}
+
+.mission-panel p {
+  font-size: 0.98rem;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.mission-right {
+  display: flex;
+  justify-content: center;
+}
+
+.mission-image-stack {
+  position: relative;
+  width: 320px;
+  height: 260px;
+}
+
+.mission-image {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.mission-image-back {
+  background: linear-gradient(135deg, #174283 0%, #1f5bb3 60%, #0b1b33 100%);
+  transform: translate(18px, 18px);
+  opacity: 0.7;
+}
+
+.mission-image-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 18px 40px rgba(15, 46, 76, 0.35);
+}
+
+/* EVOLUTION – LARGO */
+
+.evolution-section {
+  padding: 4rem 0 4.5rem;
+  background: #f5f7fb;
+}
+
+.evolution-container-wide {
+  width: 100%;
+}
+
+.evolution-card {
+  border-radius: 24px;
+  padding: 2.4rem 2.2rem;
+  background: radial-gradient(circle at top left, #1f5bb3 0%, #174283 30%, #0b1b33 80%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(12, 35, 70, 0.55);
+}
+
+.evolution-card-wide {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.evolution-header {
+  margin-bottom: 1.1rem;
+}
+
+.evolution-tag {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.evolution-title {
+  color: #ffffff;
+  margin-top: 0.7rem;
+}
+
+.evolution-body p {
+  font-size: 0.98rem;
+  line-height: 1.9;
+  color: #e5f2ff;
+  margin-bottom: 0.7rem;
+}
+
+/* WHATSAPP FLUTUANTE */
 
 .whatsapp-floating {
   position: fixed;
@@ -427,8 +528,8 @@
 .whatsapp-floating-message {
   position: relative;
   max-width: 220px;
-  background: linear-gradient(135deg, #f3e8ff 0%, #e0d4ff 100%);
-  color: #1f2933;
+  background: linear-gradient(135deg, #e0ebff 0%, #c7dafc 100%);
+  color: #111827;
   border-radius: 18px;
   padding: 8px 12px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
@@ -438,7 +539,6 @@
   border: 1px solid rgba(0, 0, 0, 0.03);
   text-align: left;
   word-break: break-word;
-
   opacity: 0;
   transform: translateY(10px);
   pointer-events: none;
@@ -456,7 +556,7 @@
   bottom: -6px;
   width: 14px;
   height: 14px;
-  background: linear-gradient(135deg, #f3e8ff 0%, #e0d4ff 100%);
+  background: linear-gradient(135deg, #e0ebff 0%, #c7dafc 100%);
   border-radius: 50%;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
 }
@@ -468,7 +568,7 @@
   bottom: -18px;
   width: 8px;
   height: 8px;
-  background: linear-gradient(135deg, #f3e8ff 0%, #e0d4ff 100%);
+  background: linear-gradient(135deg, #e0ebff 0%, #c7dafc 100%);
   border-radius: 50%;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
 }
@@ -479,70 +579,66 @@
   pointer-events: auto;
 }
 
-/* ==========================================
- * RESPONSIVE
- * ========================================== */
+/* RESPONSIVO */
+
+@media (max-width: 992px) {
+  .hero-page-container-slim {
+    padding: 0 16px;
+  }
+
+  .history-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .history-highlight-card {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .mission-container {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-right {
+    order: -1;
+  }
+
+  .mission-image-stack {
+    margin: 0 auto 1.5rem;
+  }
+
+  .portfolio-grid-clean {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .portfolio-card-main {
+    grid-column: span 2;
+  }
+}
 
 @media (max-width: 768px) {
+  .hero-page.hero-page-slim {
+    padding: 6rem 0 2.8rem;
+  }
+
   .page-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .page-subtitle {
     font-size: 1rem;
-    white-space: normal;
   }
 
-  .nossa-historia {
-    padding: 3rem 1.5rem;
+  .portfolio-litho-clean {
+    padding: 3.2rem 0 3.6rem;
   }
 
-  .historia-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .evolution-section {
+    padding: 3.2rem 0 3.6rem;
   }
 
-  .historia-image-wrapper {
-    max-width: 100%;
-  }
-
-  .historia-text .section-title {
-    font-size: 2rem;
-  }
-
-  .visao-compromisso-section {
-    padding: 3rem 1.5rem;
-  }
-
-  .mvv-section {
-    padding: 3rem 1.5rem;
-  }
-
-  .numeros-section {
-    padding: 3rem 1.5rem;
-  }
-
-  .cta-section {
-    padding: 3rem 1.5rem;
-  }
-
-  .cta-title {
-    font-size: 1.75rem;
-  }
-
-  .cta-text {
-    font-size: 1rem;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn-cta {
-    width: 100%;
-    max-width: 300px;
-    justify-content: center;
+  .evolution-card {
+    padding: 2rem 1.6rem;
   }
 
   .whatsapp-floating {
@@ -562,33 +658,19 @@
   }
 }
 
-@media (max-width: 480px) {
-  .hero-page {
-    padding: 3rem 1rem;
-  }
-
-  .nossa-historia {
-    padding: 3rem 1rem;
-  }
-
-  .visao-compromisso-section {
-    padding: 3rem 1rem;
-  }
-
-  .mvv-card {
-    padding: 2rem;
-  }
-
-  .numeros-section {
-    padding: 3rem 1rem;
-  }
-
-  .numeros-grid {
+@media (max-width: 640px) {
+  .portfolio-grid-clean {
     grid-template-columns: 1fr;
   }
 
-  .cta-section {
-    padding: 3rem 1rem;
+  .portfolio-card-main {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .evolution-card {
+    padding: 1.8rem 1.4rem;
   }
 
   .whatsapp-floating-message {
