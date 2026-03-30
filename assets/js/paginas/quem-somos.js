@@ -115,13 +115,13 @@ function initFloatingWhatsappMessage() {
   const messageEl = document.querySelector('.whatsapp-floating-message');
   if (!messageEl) return;
 
-  const mensagens = [
-    'Fale com um especialista<br>da Litho Plant',
-    'Quer melhorar a<br>produtividade da lavoura?',
-    'Monte seu programa<br>nutricional completo',
-    'Tire suas dúvidas<br>pelo WhatsApp',
-    'Solo vivo, plantas fortes.<br>Vamos conversar?'
-  ];
+const mensagens = [
+  'Fale com a equipe<br>Litho Plant',
+  'Quer melhorar os<br>resultados da sua lavoura?',
+  'Tire suas dúvidas<br>pelo WhatsApp',
+  'Conheça nossos<br>biofertilizantes',
+  'Conte com a Litho Plant<br>na produtividade da sua lavoura'
+];
 
   let idx = 0;
 

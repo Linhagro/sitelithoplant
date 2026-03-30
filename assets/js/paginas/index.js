@@ -212,11 +212,11 @@ function initFloatingWhatsappMessage() {
   if (!messageEl) return;
 
   const mensagens = [
-    'Fale com um consultor<br>especialista Linhagro',
-    'Quer melhorar a<br>produtividade da lavoura?',
-    'Tire suas dúvidas<br>pelo WhatsApp',
-    'Fale com nosso time<br>técnico agora',
-    'Vamos construir um<br>manejo mais eficiente?'
+'Fale com a equipe<br>Litho Plant',
+'Quer melhorar os<br>resultados da sua lavoura?',
+'Tire suas dúvidas<br>pelo WhatsApp',
+'Conheça nossos<br>biofertilizantes',
+'Conte com a Litho Plant<br>na nutrição da sua lavoura'
   ];
 
   let idx = 0;

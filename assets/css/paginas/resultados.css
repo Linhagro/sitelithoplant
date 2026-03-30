@@ -474,6 +474,9 @@
   bottom: 22px;
   right: 22px;
   z-index: 999;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
 }
 
 .whatsapp-floating-button {
@@ -489,6 +492,7 @@
   text-decoration: none;
   box-shadow: 0 10px 25px rgba(22,163,74,0.6);
   transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.25s ease;
+  flex-shrink: 0;
 }
 
 .whatsapp-floating-button:hover {
@@ -498,9 +502,7 @@
 }
 
 .whatsapp-floating-message {
-  position: absolute;
-  bottom: 72px;
-  right: 0;
+  position: relative;
   background: linear-gradient(135deg, #174283, #0b1b33);
   color: #e5e7eb;
   padding: 10px 14px;
@@ -509,14 +511,28 @@
   font-size: 0.85rem;
   box-shadow: 0 10px 25px rgba(15,23,42,0.45);
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateX(8px);
   transition: opacity 0.4s ease, transform 0.4s ease;
   pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.whatsapp-floating-message::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  bottom: 18px;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #174283, #0b1b33);
+  box-shadow: 0 6px 16px rgba(15,23,42,0.35);
+  transform: rotate(-45deg);
 }
 
 .whatsapp-floating-message.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 /* RESPONSIVO */

@@ -8,7 +8,17 @@
   <title>Culturas - Litho Plant</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="../assets/imagens/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/imagens/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/imagens/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/imagens/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/imagens/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/imagens/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/imagens/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/imagens/apple-touch-icon-76x76.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#174283">
+  <meta name="msapplication-TileColor" content="#174283">
+  <meta name="msapplication-config" content="browserconfig.xml">
 
   <!-- Fontes Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +69,7 @@
           onde estão os ganhos de produtividade, qualidade de fruto e equilíbrio de planta.
         </p>
 
-        <!-- Filtros de categoria na parte branca -->
+        <!-- Filtros -->
         <div class="culturas-filtros" aria-label="Filtrar culturas por tipo">
           <button type="button" class="filtro-pill active" data-filter="todas">
             <i class="fas fa-border-all"></i>
@@ -103,7 +113,7 @@
               Maior estabilidade produtiva, melhor enchimento de grãos e plantas mais resistentes a estresses climáticos.
             </p>
             <div class="cultura-footer">
-              <a href="./culturas/soja.html" rel="noopener noreferrer">
+              <a href="../paginas/culturas/soja.html" rel="noopener noreferrer">
                 <button class="cultura-button" type="button">
                   <span class="cultura-button-text">Ver detalhes</span>
                   <svg xmlns="http://www.w3.org/2000/svg"
@@ -316,7 +326,7 @@
           <article class="cultura-card" data-categoria="graos">
             <div class="cultura-card-header">
               <div class="cultura-icon">
-                <i class="fas fa-corn"></i>
+                <i class="fas fa-seedling"></i>
               </div>
               <div class="cultura-tag">
                 <span class="cultura-tag-label">Grãos</span>
@@ -407,7 +417,6 @@
               </a>
             </div>
           </article>
-
         </div>
       </div>
     </section>
@@ -438,8 +447,12 @@
   <!-- FOOTER -->
   <div id="footer-container"></div>
 
-  <!-- WHATSAPP FLUTUANTE -->
+  <!-- WHATSAPP FLUTUANTE AJUSTADO -->
   <div class="whatsapp-floating">
+    <div class="whatsapp-floating-message">
+      <span>Fale com um consultor especialista em culturas</span>
+    </div>
+
     <a
       href="https://wa.me/5527999806801?text=Ol%C3%A1!%20Quero%20saber%20sobre%20Litho%20Plant%20nas%20culturas."
       target="_blank"
@@ -449,10 +462,6 @@
     >
       <i class="fab fa-whatsapp"></i>
     </a>
-
-    <div class="whatsapp-floating-message">
-      <span>Fale com um consultor</span>
-    </div>
   </div>
 
   <!-- SCRIPTS -->

@@ -6,7 +6,6 @@
   <title>Produtos - Litho Plant</title>
   <meta name="description" content="Conheça os biofertilizantes, fertilizantes especiais e condicionadores de solo Litho Plant para potencializar o manejo da sua lavoura.">
 
-  <!-- CSS globais -->
   <link rel="stylesheet" href="../assets/css/reset.css">
   <link rel="stylesheet" href="../assets/css/variaveis.css">
   <link rel="stylesheet" href="../assets/css/componentes.css">
@@ -15,43 +14,62 @@
   <link rel="stylesheet" href="../assets/css/cookie-banner.css">
   <link rel="stylesheet" href="../assets/css/paginas/produtos.css">
 
-  <!-- Fontes e ícones -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a2b6cd552f.js" crossorigin="anonymous"></script>
-</head>
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/imagens/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/imagens/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/imagens/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/imagens/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/imagens/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/imagens/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/imagens/apple-touch-icon-76x76.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#174283">
+  <meta name="msapplication-TileColor" content="#174283">
+  <meta name="msapplication-config" content="browserconfig.xml">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 <body>
   <div id="header-container"></div>
 
   <main class="produtos-page">
 
-    <!-- HERO -->
     <section class="hero-page hero-produtos">
       <div class="hero-content">
-        <span class="hero-pill"><i class="fas fa-flask"></i> Produtos Litho Plant</span>
+        <span class="hero-pill">
+          <i class="fas fa-flask" aria-hidden="true"></i>
+          Produtos Litho Plant
+        </span>
         <h1>Produtos Litho Plant para potencializar o manejo</h1>
-        <p>Biofertilizantes, fertilizantes especiais e condicionadores de solo que nutrem, revitalizam e fortalecem a produtividade das lavouras.</p>
+        <p>
+          Biofertilizantes, fertilizantes especiais, adjuvantes, sanitizantes e condicionadores de solo
+          desenvolvidos para fortalecer o manejo e a produtividade da lavoura.
+        </p>
       </div>
     </section>
 
-    <!-- PRODUTOS SECTION -->
     <section class="produtos-section">
       <div class="container">
-        <h2 class="section-title">Escolha o produto para o seu manejo</h2>
-        <p class="section-subtitle-destaque">Conheça os benefícios e aplicações dos produtos Litho Plant.</p>
+        <div class="section-heading">
+          <h2 class="section-title">Escolha o produto para o seu manejo</h2>
+          <p class="section-subtitle-destaque">
+            Conheça os benefícios e aplicações dos produtos Litho Plant.
+          </p>
+        </div>
 
-        <div class="produtos-filtros">
-          <button class="filtro-pill active" data-filter="todos">Todos</button>
-          <button class="filtro-pill" data-filter="biofertilizantes">Biofertilizantes</button>
-          <button class="filtro-pill" data-filter="fertilizantes">Fertilizantes</button>
-          <button class="filtro-pill" data-filter="condicionadores">Condicionadores</button>
-          <button class="filtro-pill" data-filter="adjuvantes">Adjuvantes</button>
-          <button class="filtro-pill" data-filter="sanitizantes">Sanitizantes</button>
+        <div class="produtos-filtros" aria-label="Filtros de produtos">
+          <button class="filtro-pill active" type="button" data-filter="todos">Todos</button>
+          <button class="filtro-pill" type="button" data-filter="biofertilizantes">Biofertilizantes</button>
+          <button class="filtro-pill" type="button" data-filter="fertilizantes">Fertilizantes</button>
+          <button class="filtro-pill" type="button" data-filter="condicionadores">Condicionadores</button>
+          <button class="filtro-pill" type="button" data-filter="adjuvantes">Adjuvantes</button>
+          <button class="filtro-pill" type="button" data-filter="sanitizantes">Sanitizantes</button>
         </div>
 
         <div class="produtos-grid">
-          <!-- ATIVAR -->
-          <div class="produto-card" data-categoria="biofertilizantes">
+          <article class="produto-card" data-categoria="biofertilizantes">
             <div class="produto-img-wrapper">
               <img src="../assets/imagens/produtos/ATIVAR.png" alt="ATIVAR Litho Plant">
             </div>
@@ -63,10 +81,9 @@
               <span class="produto-beneficio-chip">Reduz perdas</span>
               <span class="produto-beneficio-chip">Solo mais vivo</span>
             </div>
-          </div>
+          </article>
 
-          <!-- BALTIKO -->
-          <div class="produto-card" data-categoria="biofertilizantes">
+          <article class="produto-card" data-categoria="biofertilizantes">
             <div class="produto-img-wrapper">
               <img src="../assets/imagens/produtos/BALTIKO.png" alt="BALTIKO Litho Plant">
             </div>
@@ -78,10 +95,9 @@
               <span class="produto-beneficio-chip">Resistência a estresses</span>
               <span class="produto-beneficio-chip">Floração intensa</span>
             </div>
-          </div>
+          </article>
 
-          <!-- LITHAMIN BORO (BORO) -->
-          <div class="produto-card" data-categoria="fertilizantes">
+          <article class="produto-card" data-categoria="fertilizantes">
             <div class="produto-img-wrapper">
               <img src="../assets/imagens/produtos/BORO.png" alt="LITHAMIN BORO Litho Plant">
             </div>
@@ -93,10 +109,9 @@
               <span class="produto-beneficio-chip">Alta eficiência</span>
               <span class="produto-beneficio-chip">Versatilidade</span>
             </div>
-          </div>
+          </article>
 
-          <!-- CLEAN FRUIT -->
-          <div class="produto-card" data-categoria="sanitizantes">
+          <article class="produto-card" data-categoria="sanitizantes">
             <div class="produto-img-wrapper">
               <img src="../assets/imagens/produtos/CLEAN-FRUIT.png" alt="CLEAN FRUIT Litho Plant">
             </div>
@@ -108,10 +123,9 @@
               <span class="produto-beneficio-chip">Mais shelf life</span>
               <span class="produto-beneficio-chip">Reduz perdas</span>
             </div>
-          </div>
+          </article>
 
-          <!-- COFFEE HF -->
-          <div class="produto-card" data-categoria="fertilizantes">
+          <article class="produto-card" data-categoria="fertilizantes">
             <div class="produto-img-wrapper">
               <img src="../assets/imagens/produtos/COFFEE.png" alt="COFFEE HF Litho Plant">
             </div>
@@ -123,10 +137,9 @@
               <span class="produto-beneficio-chip">Alta produtividade</span>
               <span class="produto-beneficio-chip">Bioestimulação</span>
             </div>
-          </div>
+          </article>
 
-          <!-- GLUTA PHOS -->
-          <div class="produto-card" data-categoria="fertilizantes">
+          <article class="produto-card" data-categoria="fertilizantes">
             <div class="produto-img-wrapper">
               <img src="../assets/imagens/produtos/GLUTA.png" alt="GLUTA PHOS Litho Plant">
             </div>
@@ -138,10 +151,9 @@
               <span class="produto-beneficio-chip">Raízes fortes</span>
               <span class="produto-beneficio-chip">Eficiência nutricional</span>
             </div>
-          </div>
+          </article>
 
-          <!-- LITHAMIN PLUS -->
-          <div class="produto-card" data-categoria="biofertilizantes">
+          <article class="produto-card" data-categoria="biofertilizantes">
             <div class="produto-img-wrapper">
               <img src="../assets/imagens/produtos/LITHAMIN.png" alt="LITHAMIN PLUS Litho Plant">
             </div>
@@ -153,10 +165,9 @@
               <span class="produto-beneficio-chip">Alta solubilidade</span>
               <span class="produto-beneficio-chip">Crescimento vigoroso</span>
             </div>
-          </div>
+          </article>
 
-          <!-- LITHOCAL -->
-          <div class="produto-card" data-categoria="fertilizantes">
+          <article class="produto-card" data-categoria="fertilizantes">
             <div class="produto-img-wrapper">
               <img src="../assets/imagens/produtos/LITHOCAL.png" alt="LITHOCAL Litho Plant">
             </div>
@@ -168,10 +179,9 @@
               <span class="produto-beneficio-chip">Raízes fortes</span>
               <span class="produto-beneficio-chip">Alta reatividade</span>
             </div>
-          </div>
+          </article>
 
-          <!-- LITHOMAG -->
-          <div class="produto-card" data-categoria="fertilizantes">
+          <article class="produto-card" data-categoria="fertilizantes">
             <div class="produto-img-wrapper">
               <img src="../assets/imagens/produtos/LITHOMAG.png" alt="LITHOMAG Litho Plant">
             </div>
@@ -183,10 +193,9 @@
               <span class="produto-beneficio-chip">Mais clorofila</span>
               <span class="produto-beneficio-chip">Maior vigor</span>
             </div>
-          </div>
+          </article>
 
-          <!-- MITTOMAX -->
-          <div class="produto-card" data-categoria="adjuvantes">
+          <article class="produto-card" data-categoria="adjuvantes">
             <div class="produto-img-wrapper">
               <img src="../assets/imagens/produtos/MITTOMAX.png" alt="MITTOMAX Litho Plant">
             </div>
@@ -198,10 +207,9 @@
               <span class="produto-beneficio-chip">Uniformidade</span>
               <span class="produto-beneficio-chip">Bioestimulação</span>
             </div>
-          </div>
+          </article>
 
-          <!-- SOMBRYT BR -->
-          <div class="produto-card" data-categoria="condicionadores">
+          <article class="produto-card" data-categoria="condicionadores">
             <div class="produto-img-wrapper">
               <img src="../assets/imagens/produtos/SOMBRYT.png" alt="SOMBRYT BR Litho Plant">
             </div>
@@ -213,10 +221,9 @@
               <span class="produto-beneficio-chip">Conforto térmico</span>
               <span class="produto-beneficio-chip">Fotossíntese ideal</span>
             </div>
-          </div>
+          </article>
 
-          <!-- TURFA GEL -->
-          <div class="produto-card" data-categoria="condicionadores">
+          <article class="produto-card" data-categoria="condicionadores">
             <div class="produto-img-wrapper">
               <img src="../assets/imagens/produtos/TURFA.png" alt="TURFA GEL Litho Plant">
             </div>
@@ -228,26 +235,27 @@
               <span class="produto-beneficio-chip">Solo fértil</span>
               <span class="produto-beneficio-chip">Alta produtividade</span>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- DESTAQUE (rotacionado via JS) -->
     <section class="produto-destaque">
       <div class="destaque-container">
         <div class="destaque-img">
           <img src="../assets/imagens/produtos/SOMBRYT.png" alt="SOMBRYT BR Produto em destaque">
         </div>
+
         <div class="destaque-texto produto-destaque-fade is-visible">
           <span class="produto-tag destaque-tag">Produto em destaque</span>
           <h2>SOMBRYT BR</h2>
-          <p>Protetor solar foliar com tecnologia nanoparticulada, desenvolvido em parceria com a EMBRAPA. Ideal para culturas expostas a radiação intensa e altas temperaturas.</p>
-          <div class="produto-beneficios">
-            <span class="produto-beneficio-chip">Proteção UV</span>
-            <span class="produto-beneficio-chip">Maior fixação floral</span>
-            <span class="produto-beneficio-chip">Fotossíntese equilibrada</span>
-          </div>
+          <p>
+            Protetor solar foliar com tecnologia nanoparticulada, desenvolvido para culturas expostas a
+            radiação intensa e altas temperaturas.
+          </p>
+
+          <div class="produto-beneficios"></div>
+
           <div class="destaque-info">
             <h4>Doses e aplicação</h4>
             <p>Aplicar via foliar a 200–500 mL/ha conforme a cultura e intensidade solar.</p>
@@ -256,23 +264,29 @@
       </div>
     </section>
 
-    <!-- CTA FINAL -->
     <section class="cta-section cta-produtos">
-      <h2>Quer encaixar esses produtos no seu manejo?</h2>
-      <p>Nossos consultores ajudam você a montar o programa ideal para sua cultura.</p>
-      <a href="https://wa.me/5527996950571" class="btn-cta btn-primary">
-        <i class="fab fa-whatsapp"></i> Falar com consultor
-      </a>
+      <div class="container cta-produtos-inner">
+        <h2>Quer encaixar esses produtos no seu manejo?</h2>
+        <p>Nossos consultores ajudam você a montar o programa ideal para sua cultura.</p>
+        <a href="https://wa.me/5527996950571" target="_blank" rel="noopener noreferrer" class="btn-cta btn-primary">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          Falar com consultor
+        </a>
+      </div>
     </section>
 
-    <!-- WHATSAPP -->
     <div class="whatsapp-floating">
-      <a href="https://wa.me/5527996950571" target="_blank" class="whatsapp-floating-button">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <div class="whatsapp-floating-message">
+      <div class="whatsapp-floating-message visible">
         <span>Fale com um consultor sobre os produtos</span>
       </div>
+
+      <a href="https://wa.me/5527996950571"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="whatsapp-floating-button"
+         aria-label="Falar com consultor pelo WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+      </a>
     </div>
 
   </main>
@@ -280,7 +294,6 @@
   <div id="footer-container"></div>
   <div id="cookie-banner-container"></div>
 
-  <!-- Scripts -->
   <script src="../assets/components-loader.js"></script>
   <script src="../assets/js/components/header.js"></script>
   <script src="../assets/js/paginas/produtos.js"></script>

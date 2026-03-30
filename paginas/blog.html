@@ -15,10 +15,21 @@
   <link rel="stylesheet" href="../assets/css/cookie-banner.css">
   <!-- CSS desta página -->
   <link rel="stylesheet" href="../assets/css/paginas/blog.css">
-
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/imagens/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/imagens/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/imagens/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/imagens/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/imagens/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/imagens/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/imagens/apple-touch-icon-76x76.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#174283">
+  <meta name="msapplication-TileColor" content="#174283">
+  <meta name="msapplication-config" content="browserconfig.xml">
   <!-- Fontes e ícones -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a2b6cd552f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <!-- HEADER carregado via components-loader -->
@@ -90,7 +101,7 @@
             </a>
           </article>
 
-          <!-- Escaldadura nas plantas (usa intro) -->
+          <!-- Escaldadura nas plantas -->
           <article class="blog-card">
             <a href="blog/escaldadura-nas-plantas-como-evitar-esse-problema.html" class="blog-card-link">
               <div class="blog-card-image">
@@ -113,7 +124,7 @@
             </a>
           </article>
 
-          <!-- Turfa Gel (usa intro) -->
+          <!-- Turfa Gel -->
           <article class="blog-card">
             <a href="blog/turfa-gel-quais-sao-os-beneficios-para-as-plantacoes.html" class="blog-card-link">
               <div class="blog-card-image">
@@ -136,7 +147,7 @@
             </a>
           </article>
 
-          <!-- Benefícios da Litho Plant (usa intro) -->
+          <!-- Benefícios da Litho Plant -->
           <article class="blog-card">
             <a href="blog/conheca-os-beneficios-da-litho-plant.html" class="blog-card-link">
               <div class="blog-card-image">
@@ -159,7 +170,7 @@
             </a>
           </article>
 
-          <!-- Cultivo de café (usa intro) -->
+          <!-- Cultivo de café -->
           <article class="blog-card">
             <a href="blog/cultivo-de-cafe-dicas-para-resultados-de-sucesso.html" class="blog-card-link">
               <div class="blog-card-image">
@@ -228,7 +239,7 @@
             </a>
           </article>
 
-          <!-- Perda de nitrogênio (usa intro) -->
+          <!-- Perda de nitrogênio -->
           <article class="blog-card">
             <a href="blog/perda-de-nitrogenio-na-lavoura-tipos-e-como-evitar.html" class="blog-card-link">
               <div class="blog-card-image">
@@ -251,7 +262,7 @@
             </a>
           </article>
 
-          <!-- Sombryt: Proteção solar para folhas e frutos (NOVO CARD, usa intro) -->
+          <!-- Sombryt -->
           <article class="blog-card">
             <a href="blog/sombryt-protecao-solar-para-folhas-e-frutos.html" class="blog-card-link">
               <div class="blog-card-image">
@@ -279,6 +290,21 @@
       </div>
     </section>
 
+    <!-- WHATSAPP FLOATING -->
+    <div class="whatsapp-floating">
+      <div class="whatsapp-floating-message">
+        <span>Fale com um consultor sobre os conteúdos do blog</span>
+      </div>
+
+      <a href="https://wa.me/5527996950571"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="whatsapp-floating-button"
+         aria-label="Falar com consultor pelo WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+      </a>
+    </div>
+
   </main>
 
   <!-- FOOTER + COOKIE -->
@@ -289,6 +315,50 @@
   <script src="../assets/components-loader.js"></script>
   <script src="../assets/js/components/header.js"></script>
   <!-- JS desta página -->
-  <script src="../assets/js/paginas/blog.js"></script>
+  <script>
+    document.addEventListener('componentsLoaded', () => {
+      initBlogPage();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.__blogPageInitialized) {
+        initBlogPage();
+      }
+    });
+
+    function initBlogPage() {
+      if (window.__blogPageInitialized) return;
+      window.__blogPageInitialized = true;
+
+      initFloatingWhatsappBlog();
+    }
+
+    function initFloatingWhatsappBlog() {
+      const mensagem = document.querySelector('.whatsapp-floating-message');
+      if (!mensagem || mensagem.dataset.initialized === 'true') return;
+
+      mensagem.dataset.initialized = 'true';
+
+      const mensagens = [
+        'Fale com um consultor<br>sobre os conteúdos do blog',
+        'Quer tirar dúvidas sobre<br>manejo e produtos Litho Plant?',
+        'Envie sua pergunta<br>direto pelo WhatsApp'
+      ];
+
+      let i = 0;
+      mensagem.innerHTML = mensagens[i];
+      mensagem.classList.add('visible');
+
+      setInterval(() => {
+        mensagem.classList.remove('visible');
+
+        setTimeout(() => {
+          i = (i + 1) % mensagens.length;
+          mensagem.innerHTML = mensagens[i];
+          mensagem.classList.add('visible');
+        }, 400);
+      }, 5000);
+    }
+  </script>
 </body>
 </html>

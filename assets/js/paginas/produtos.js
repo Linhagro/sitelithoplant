@@ -2,54 +2,47 @@ document.addEventListener('componentsLoaded', () => {
   initProdutosPage();
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  if (!window.componentsLoaderInitialized) {
+    initProdutosPage();
+  }
+});
+
 function initProdutosPage() {
   initFiltrosProdutos();
   initFloatingWhatsappProdutos();
   initRotacaoProdutoDestaque();
 }
 
-/* ----------------- FILTROS PRODUTOS ----------------- */
 function initFiltrosProdutos() {
   const filtros = document.querySelectorAll('.filtro-pill');
-  const grid = document.querySelector('.produtos-grid');
   const cards = Array.from(document.querySelectorAll('.produto-card'));
-  if (!grid || cards.length === 0) return;
 
-  const ordemOriginal = [...cards];
+  if (!filtros.length || !cards.length) return;
 
   filtros.forEach(filtro => {
     filtro.addEventListener('click', () => {
-      filtros.forEach(f => f.classList.remove('active'));
+      const valor = filtro.dataset.filter;
+
+      filtros.forEach(btn => btn.classList.remove('active'));
       filtro.classList.add('active');
 
-      const valor = filtro.dataset.filter;
-      let selecionados;
+      cards.forEach(card => {
+        const categoria = card.dataset.categoria;
+        const mostrar = valor === 'todos' || categoria === valor;
 
-      if (valor === 'todos') {
-        selecionados = ordemOriginal;
-        ordemOriginal.forEach(c => c.classList.remove('produto-card-filtrado'));
-      } else {
-        selecionados = ordemOriginal.filter(c => c.dataset.categoria === valor);
-        ordemOriginal.forEach(c => {
-          if (c.dataset.categoria === valor) {
-            c.classList.add('produto-card-filtrado');
-          } else {
-            c.classList.remove('produto-card-filtrado');
-          }
-        });
-      }
-
-      const naoSelecionados = ordemOriginal.filter(c => !selecionados.includes(c));
-      grid.innerHTML = '';
-      grid.append(...selecionados, ...naoSelecionados);
+        card.classList.toggle('is-hidden', !mostrar);
+        card.classList.toggle('produto-card-filtrado', valor !== 'todos' && mostrar);
+      });
     });
   });
 }
 
-/* ----------------- WHATSAPP FLUTUANTE ----------------- */
 function initFloatingWhatsappProdutos() {
   const mensagem = document.querySelector('.whatsapp-floating-message');
-  if (!mensagem) return;
+  if (!mensagem || mensagem.dataset.initialized === 'true') return;
+
+  mensagem.dataset.initialized = 'true';
 
   const mensagens = [
     'Fale com um consultor<br>sobre os produtos Litho Plant',
@@ -58,20 +51,20 @@ function initFloatingWhatsappProdutos() {
   ];
 
   let i = 0;
-  mensagem.classList.add('visible');
   mensagem.innerHTML = mensagens[i];
+  mensagem.classList.add('visible');
 
   setInterval(() => {
     mensagem.classList.remove('visible');
-    i = (i + 1) % mensagens.length;
+
     setTimeout(() => {
+      i = (i + 1) % mensagens.length;
       mensagem.innerHTML = mensagens[i];
       mensagem.classList.add('visible');
-    }, 500);
+    }, 400);
   }, 5000);
 }
 
-/* ----------------- ROTACIONAR PRODUTO EM DESTAQUE ----------------- */
 function initRotacaoProdutoDestaque() {
   const imgEl = document.querySelector('.produto-destaque .destaque-img img');
   const tituloEl = document.querySelector('.produto-destaque h2');
@@ -81,6 +74,9 @@ function initRotacaoProdutoDestaque() {
   const blocoTexto = document.querySelector('.produto-destaque .produto-destaque-fade');
 
   if (!imgEl || !tituloEl || !descEl || !chipsContainer || !doseTexto || !blocoTexto) return;
+  if (blocoTexto.dataset.initialized === 'true') return;
+
+  blocoTexto.dataset.initialized = 'true';
 
   const destaques = [
     {
@@ -103,7 +99,7 @@ function initRotacaoProdutoDestaque() {
       nome: 'BALTIKO',
       img: '../assets/imagens/produtos/BALTIKO.png',
       alt: 'BALTIKO Litho Plant',
-      descricao: 'Bioestimulante marinho à base de algas Ascophyllum nodosum e aminoácidos, fortalecendo o metabolismo e a resistência da planta.',
+      descricao: 'Bioestimulante marinho à base de algas e aminoácidos, fortalecendo o metabolismo e a resistência da planta.',
       chips: ['Resistência a estresses', 'Raízes fortalecidas', 'Floração estimulada'],
       doses: 'Aplicar em fases de estresse ou maior exigência fisiológica, conforme indicação técnica.'
     },
@@ -111,7 +107,7 @@ function initRotacaoProdutoDestaque() {
       nome: 'TURFA GEL',
       img: '../assets/imagens/produtos/TURFA.png',
       alt: 'TURFA GEL Litho Plant',
-      descricao: 'Condicionador do solo que combina substâncias húmicas de turfa e aminoácidos, enriquecendo o microbioma e fortalecendo raízes.',
+      descricao: 'Condicionador do solo que combina substâncias húmicas e aminoácidos, enriquecendo o microbioma e fortalecendo raízes.',
       chips: ['Raízes profundas', 'Solo mais fértil', 'Resiliência a estresses'],
       doses: 'Ideal para fertirrigação ou aplicação no sulco, de acordo com o manejo recomendado.'
     }
@@ -138,15 +134,12 @@ function initRotacaoProdutoDestaque() {
   aplicarDestaque(destaques[indice]);
 
   setInterval(() => {
-    // fade-out
     blocoTexto.classList.remove('is-visible');
 
     setTimeout(() => {
       indice = (indice + 1) % destaques.length;
       aplicarDestaque(destaques[indice]);
-
-      // fade-in
       blocoTexto.classList.add('is-visible');
-    }, 500); // mesmo tempo da transição no CSS
+    }, 500);
   }, 8000);
 }

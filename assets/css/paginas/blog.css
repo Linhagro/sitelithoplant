@@ -177,6 +177,82 @@
   filter: brightness(1.05);
 }
 
+/* WHATSAPP FLOATING - mesmo padrão dos produtos */
+.whatsapp-floating {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 999;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.whatsapp-floating-button {
+  background-color: #22c55e;
+  color: #ffffff;
+  font-size: 26px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.6);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.25s ease;
+  flex-shrink: 0;
+}
+
+.whatsapp-floating-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(22, 163, 74, 0.7);
+  background-color: #16a34a;
+}
+
+.whatsapp-floating-message {
+  position: relative;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 12px 16px;
+  border-radius: 14px;
+  max-width: 260px;
+  min-height: 52px;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.14);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.whatsapp-floating-message::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  bottom: 18px;
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-right: 1px solid rgba(148, 163, 184, 0.28);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.28);
+  transform: rotate(-45deg);
+}
+
+.whatsapp-floating-message.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.whatsapp-floating-message span {
+  display: block;
+  max-width: 100%;
+}
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
   .hero-blog {
@@ -185,6 +261,18 @@
 
   .hero-blog h1 {
     font-size: 2rem;
+  }
+
+  .whatsapp-floating {
+    right: 18px;
+    bottom: 18px;
+    gap: 10px;
+  }
+
+  .whatsapp-floating-message {
+    max-width: 220px;
+    font-size: 0.82rem;
+    padding: 10px 14px;
   }
 }
 
@@ -199,5 +287,18 @@
 
   .blog-card-body {
     padding: 14px 14px 16px;
+  }
+
+  .whatsapp-floating-button {
+    width: 54px;
+    height: 54px;
+    font-size: 24px;
+  }
+
+  .whatsapp-floating-message {
+    max-width: 180px;
+    min-height: 46px;
+    font-size: 0.78rem;
+    padding: 9px 12px;
   }
 }
