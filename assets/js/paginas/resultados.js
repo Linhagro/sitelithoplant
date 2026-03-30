@@ -1,151 +1,119 @@
 document.addEventListener('componentsLoaded', () => {
-  initProdutosPage();
+  initSelecaoCulturas();
+  initCarouselMamao();
+  initCarouselFrutas();
+  initCafeVideos();                 // controla café + milho
+  initFloatingWhatsappResultados();
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (!window.__produtosPageInitialized) {
-    initProdutosPage();
+function initSelecaoCulturas() {
+  const itens = document.querySelectorAll('.cultura-item');
+  const blocos = document.querySelectorAll('.cultura-bloco');
+  if (!itens.length || !blocos.length) return;
+
+  function ativar(cultura) {
+    itens.forEach(li => {
+      li.classList.toggle('active', li.dataset.cultura === cultura);
+    });
+    blocos.forEach(bloco => {
+      if (bloco.dataset.cultura === cultura) {
+        bloco.classList.add('ativo');
+      } else {
+        bloco.classList.remove('ativo');
+      }
+    });
   }
-});
 
-function initProdutosPage() {
-  if (window.__produtosPageInitialized) return;
-  window.__produtosPageInitialized = true;
+  itens.forEach(li => {
+    const btn = li.querySelector('button');
+    if (!btn) return;
+    btn.addEventListener('click', () => ativar(li.dataset.cultura));
+  });
 
-  initFiltrosProdutos();
-  initFloatingWhatsappProdutos();
-  initRotacaoProdutoDestaque();
+  ativar('soja');
 }
 
-/* FILTROS */
-function initFiltrosProdutos() {
-  const filtros = document.querySelectorAll('.filtro-pill');
-  const cards = Array.from(document.querySelectorAll('.produto-card'));
+function initCarouselMamao() {
+  const carousel = document.querySelector('#carousel-mamao');
+  if (!carousel) return;
 
-  if (!filtros.length || !cards.length) return;
+  const imagens = Array.from(carousel.querySelectorAll('img'));
+  if (!imagens.length) return;
 
-  filtros.forEach(filtro => {
-    filtro.addEventListener('click', () => {
-      const valor = filtro.dataset.filter;
+  let idx = 0;
+  imagens.forEach((img, i) => img.classList.toggle('ativo', i === 0));
 
-      filtros.forEach(btn => btn.classList.remove('active'));
-      filtro.classList.add('active');
+  setInterval(() => {
+    imagens[idx].classList.remove('ativo');
+    idx = (idx + 1) % imagens.length;
+    imagens[idx].classList.add('ativo');
+  }, 4000);
+}
 
-      cards.forEach(card => {
-        const categoria = card.dataset.categoria;
-        const mostrar = valor === 'todos' || categoria === valor;
+function initCarouselFrutas() {
+  const carousel = document.querySelector('#carousel-frutas');
+  if (!carousel) return;
 
-        card.classList.toggle('is-hidden', !mostrar);
-        card.classList.toggle('produto-card-filtrado', valor !== 'todos' && mostrar);
-      });
+  const imagens = Array.from(carousel.querySelectorAll('img'));
+  if (!imagens.length) return;
+
+  let idx = 0;
+  imagens.forEach((img, i) => img.classList.toggle('ativo', i === 0));
+
+  setInterval(() => {
+    imagens[idx].classList.remove('ativo');
+    idx = (idx + 1) % imagens.length;
+    imagens[idx].classList.add('ativo');
+  }, 4000);
+}
+
+function initCafeVideos() {
+  const covers = document.querySelectorAll('.cafe-video-cover');
+  if (!covers.length) return;
+
+  covers.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const videoId = btn.dataset.videoId;
+      if (!videoId) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'video-ratio';
+
+      wrapper.innerHTML = `
+        <iframe
+          src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+          title="Depoimento - Litho Plant"
+          frameborder="0"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      `;
+
+      btn.replaceWith(wrapper);
     });
   });
 }
 
-/* WHATSAPP */
-function initFloatingWhatsappProdutos() {
-  const mensagem = document.querySelector('.whatsapp-floating-message');
-  if (!mensagem || mensagem.dataset.initialized === 'true') return;
+function initFloatingWhatsappResultados() {
+  const msg = document.querySelector('.whatsapp-floating-message');
+  if (!msg) return;
 
-  mensagem.dataset.initialized = 'true';
-
-  const mensagens = [
-    'Fale com um consultor<br>sobre os produtos Litho Plant',
-    'Quer ajuda para montar<br>o manejo com nossos produtos?',
-    'Tire suas dúvidas<br>pelo WhatsApp'
+  const textos = [
+    'Fale com um consultor<br>sobre os resultados em campo',
+    'Quer alcançar esses<br>resultados na sua lavoura?',
+    'Monte o manejo ideal<br>com nosso time técnico'
   ];
 
   let i = 0;
-  mensagem.innerHTML = mensagens[i];
-  mensagem.classList.add('visible');
+  msg.classList.add('visible');
+  msg.innerHTML = textos[i];
 
   setInterval(() => {
-    mensagem.classList.remove('visible');
-
+    msg.classList.remove('visible');
+    i = (i + 1) % textos.length;
     setTimeout(() => {
-      i = (i + 1) % mensagens.length;
-      mensagem.innerHTML = mensagens[i];
-      mensagem.classList.add('visible');
-    }, 400);
+      msg.innerHTML = textos[i];
+      msg.classList.add('visible');
+    }, 450);
   }, 5000);
-}
-
-/* DESTAQUE ROTATIVO */
-function initRotacaoProdutoDestaque() {
-  const imgEl = document.querySelector('.produto-destaque .destaque-img img');
-  const tituloEl = document.querySelector('.produto-destaque h2');
-  const descEl = document.querySelector('.produto-destaque .destaque-texto > p');
-  const chipsContainer = document.querySelector('.produto-destaque .produto-beneficios');
-  const doseTexto = document.querySelector('.produto-destaque .destaque-info p');
-  const blocoTexto = document.querySelector('.produto-destaque .produto-destaque-fade');
-
-  if (!imgEl || !tituloEl || !descEl || !chipsContainer || !doseTexto || !blocoTexto) return;
-  if (blocoTexto.dataset.initialized === 'true') return;
-
-  blocoTexto.dataset.initialized = 'true';
-
-  const destaques = [
-    {
-      nome: 'SOMBRYT BR',
-      img: '../assets/imagens/produtos/SOMBRYT.png',
-      alt: 'SOMBRYT BR Litho Plant',
-      descricao: 'Protetor solar foliar com tecnologia nanoparticulada, ideal para culturas expostas a radiação intensa e altas temperaturas.',
-      chips: ['Proteção solar', 'Conforto térmico', 'Maior fixação floral'],
-      doses: 'Aplicar via foliar a 200–500 mL/ha conforme a cultura e intensidade solar.'
-    },
-    {
-      nome: 'ATIVAR',
-      img: '../assets/imagens/produtos/ATIVAR.png',
-      alt: 'ATIVAR Litho Plant',
-      descricao: 'Biofertilizante que combina substâncias húmicas, extrato de algas e aminoácidos para potencializar a eficiência da adubação.',
-      chips: ['Maior absorção de nutrientes', 'Redução de perdas', 'Solo mais vivo'],
-      doses: 'Indicado para aplicações junto aos fertilizantes em todas as adubações, seguindo recomendação do consultor.'
-    },
-    {
-      nome: 'BALTIKO',
-      img: '../assets/imagens/produtos/BALTIKO.png',
-      alt: 'BALTIKO Litho Plant',
-      descricao: 'Bioestimulante marinho à base de algas e aminoácidos, fortalecendo o metabolismo e a resistência da planta.',
-      chips: ['Resistência a estresses', 'Raízes fortalecidas', 'Floração estimulada'],
-      doses: 'Aplicar em fases de estresse ou maior exigência fisiológica, conforme indicação técnica.'
-    },
-    {
-      nome: 'TURFA GEL',
-      img: '../assets/imagens/produtos/TURFA.png',
-      alt: 'TURFA GEL Litho Plant',
-      descricao: 'Condicionador do solo que combina substâncias húmicas e aminoácidos, enriquecendo o microbioma e fortalecendo raízes.',
-      chips: ['Raízes profundas', 'Solo mais fértil', 'Resiliência a estresses'],
-      doses: 'Ideal para fertirrigação ou aplicação no sulco, de acordo com o manejo recomendado.'
-    }
-  ];
-
-  let indice = 0;
-
-  function aplicarDestaque(prod) {
-    imgEl.src = prod.img;
-    imgEl.alt = prod.alt;
-    tituloEl.textContent = prod.nome;
-    descEl.textContent = prod.descricao;
-    doseTexto.textContent = prod.doses;
-
-    chipsContainer.innerHTML = '';
-    prod.chips.forEach(chip => {
-      const span = document.createElement('span');
-      span.className = 'produto-beneficio-chip';
-      span.textContent = chip;
-      chipsContainer.appendChild(span);
-    });
-  }
-
-  aplicarDestaque(destaques[indice]);
-
-  setInterval(() => {
-    blocoTexto.classList.remove('is-visible');
-
-    setTimeout(() => {
-      indice = (indice + 1) % destaques.length;
-      aplicarDestaque(destaques[indice]);
-      blocoTexto.classList.add('is-visible');
-    }, 500);
-  }, 8000);
 }

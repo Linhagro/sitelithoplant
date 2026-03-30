@@ -5,6 +5,7 @@
  * ================================================
  */
 
+
 /* FOOTER PRINCIPAL */
 .footer {
   background: linear-gradient(135deg, #0f2d5a 0%, #174283 60%, #02152f 100%);
@@ -26,6 +27,7 @@
   pointer-events: none;
 }
 
+
 /* SEÇÃO PRINCIPAL */
 .footer-main {
   padding: 50px 0 40px;
@@ -44,6 +46,7 @@
   margin: 0;
   padding: 0;
 }
+
 
 /* SOBRE */
 .footer-about {
@@ -66,6 +69,7 @@
   color: #c5d0e0;
   margin: 0 0 24px 0;
 }
+
 
 /* REDES SOCIAIS */
 .footer-socials {
@@ -91,7 +95,7 @@
 }
 
 .social-link:hover {
-  background: linear-gradient(135deg, #f8af41 0%, #f1a02a 100%);
+  background: linear-gradient(135deg, #f8af41 0%, #f8af41 100%);
   color: #fff;
   transform: translateY(-4px) rotate(5deg);
   box-shadow: 0 8px 20px rgba(248, 175, 65, 0.35);
@@ -101,6 +105,7 @@
 .social-whatsapp:hover {
   background: linear-gradient(135deg, #25D366 0%, #066839 100%);
 }
+
 
 /* TÍTULOS */
 .footer-title {
@@ -124,30 +129,30 @@
   border-radius: 2px;
 }
 
+
 /* LINKS RÁPIDOS */
 .footer-links {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: block;              /* garante coluna mesmo se algo aplicar flex */
+  display: block;
 }
 
 .footer-links li {
-  display: block;              /* cada item em uma linha */
+  display: block;
   margin: 0 0 12px 0;
 }
 
 .footer-links a {
   position: relative;
   display: inline-block;
-  padding-left: 18px;          /* espaço para a setinha */
+  padding-left: 18px;
   color: #c5d0e0;
   text-decoration: none;
   font-size: 14px;
   transition: all 0.3s ease;
 }
 
-/* setinha antes do texto */
 .footer-links a::before {
   content: '›';
   position: absolute;
@@ -158,11 +163,11 @@
   line-height: 1;
 }
 
-/* hover */
 .footer-links a:hover {
   color: #f8af41;
   padding-left: 22px;
 }
+
 
 /* CONTATO */
 .footer-contact {
@@ -214,6 +219,7 @@
   color: #f8af41;
 }
 
+
 /* FOOTER BOTTOM */
 .footer-bottom {
   background: rgba(0, 10, 30, 0.55);
@@ -236,10 +242,11 @@
   margin: 0 auto 20px;
 }
 
-.footer copyright strong {
+.footer-copyright strong {
   color: #f8af41;
   font-weight: 600;
 }
+
 
 /* LINKS LEGAIS */
 .footer-bottom-links {
@@ -266,6 +273,7 @@
   font-size: 13px;
 }
 
+
 /* Botão "Gerenciar Cookies" */
 .footer-cookie-link {
   font-size: 13px;
@@ -282,6 +290,7 @@
 .footer-cookie-link:hover {
   color: #f8af41;
 }
+
 
 /* BOTÃO VOLTAR AO TOPO */
 .back-to-top {
@@ -317,6 +326,7 @@
   transform: translateY(-2px);
 }
 
+
 /* ESPAÇAMENTO ANTES DO FOOTER */
 section:last-of-type,
 .cta-final,
@@ -325,6 +335,7 @@ main > *:last-child {
   margin-bottom: 0 !important;
   padding-bottom: 50px;
 }
+
 
 /* RESPONSIVIDADE */
 @media (max-width: 1024px) {

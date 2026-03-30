@@ -14,18 +14,6 @@
   <link rel="stylesheet" href="../assets/css/cookie-banner.css">
   <link rel="stylesheet" href="../assets/css/paginas/produtos.css">
 
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/imagens/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/imagens/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="assets/imagens/favicon-48x48.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/imagens/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="assets/imagens/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="assets/imagens/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/imagens/apple-touch-icon-76x76.png">
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#174283">
-  <meta name="msapplication-TileColor" content="#174283">
-  <meta name="msapplication-config" content="browserconfig.xml">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
@@ -35,7 +23,6 @@
   <div id="header-container"></div>
 
   <main class="produtos-page">
-
     <section class="hero-page hero-produtos">
       <div class="hero-content">
         <span class="hero-pill">
@@ -242,19 +229,27 @@
 
     <section class="produto-destaque">
       <div class="destaque-container">
-        <div class="destaque-img">
-          <img src="../assets/imagens/produtos/SOMBRYT.png" alt="SOMBRYT BR Produto em destaque">
+        <div class="destaque-img destaque-lente-area" id="destaqueLenteArea">
+          <img
+            src="../assets/imagens/produtos/SOMBRYT.png"
+            alt="SOMBRYT BR Produto em destaque"
+            id="destaqueImg"
+          >
+          <div class="zoom-lens" id="zoomLens" aria-hidden="true"></div>
         </div>
 
         <div class="destaque-texto produto-destaque-fade is-visible">
           <span class="produto-tag destaque-tag">Produto em destaque</span>
           <h2>SOMBRYT BR</h2>
           <p>
-            Protetor solar foliar com tecnologia nanoparticulada, desenvolvido para culturas expostas a
-            radiação intensa e altas temperaturas.
+            Protetor solar foliar com tecnologia nanoparticulada, ideal para culturas expostas a radiação intensa e altas temperaturas.
           </p>
 
-          <div class="produto-beneficios"></div>
+          <div class="produto-beneficios">
+            <span class="produto-beneficio-chip">Proteção solar</span>
+            <span class="produto-beneficio-chip">Conforto térmico</span>
+            <span class="produto-beneficio-chip">Maior fixação floral</span>
+          </div>
 
           <div class="destaque-info">
             <h4>Doses e aplicação</h4>
@@ -268,7 +263,7 @@
       <div class="container cta-produtos-inner">
         <h2>Quer encaixar esses produtos no seu manejo?</h2>
         <p>Nossos consultores ajudam você a montar o programa ideal para sua cultura.</p>
-        <a href="https://wa.me/5527996950571" target="_blank" rel="noopener noreferrer" class="btn-cta btn-primary">
+        <a href="https://wa.me/5527999805780" target="_blank" rel="noopener noreferrer" class="btn-cta btn-primary">
           <i class="fab fa-whatsapp" aria-hidden="true"></i>
           Falar com consultor
         </a>
@@ -288,7 +283,6 @@
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
       </a>
     </div>
-
   </main>
 
   <div id="footer-container"></div>

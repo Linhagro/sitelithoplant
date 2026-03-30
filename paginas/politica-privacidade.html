@@ -1,235 +1,612 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Política de Privacidade da Linhagro Linhares Agronegócios - Saiba como tratamos seus dados pessoais de acordo com a LGPD.">
-  <meta name="robots" content="index, follow">
-  
-  <title>Política de Privacidade | Linhagro Agronegócios</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="Leia os Termos de Uso da Litho Plant e entenda as condições de navegação, uso de conteúdo, responsabilidades e direitos relacionados ao site."
+  />
+
+  <title>Termos de Uso - Litho Plant</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/imagens/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/imagens/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="assets/imagens/favicon-48x48.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/imagens/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="assets/imagens/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="assets/imagens/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/imagens/apple-touch-icon-76x76.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/imagens/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/imagens/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="../assets/imagens/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/imagens/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../assets/imagens/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../assets/imagens/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/imagens/apple-touch-icon-76x76.png">
+  <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#174283">
   <meta name="msapplication-TileColor" content="#174283">
-  <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="msapplication-config" content="../browserconfig.xml">
 
-  <!-- Fontes Google -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="../assets/css/reset.css">
-  <link rel="stylesheet" href="../assets/css/variaveis.css">
-  <link rel="stylesheet" href="../assets/css/componentes.css">
-  <link rel="stylesheet" href="../assets/css/components/header.css">
-  <link rel="stylesheet" href="../assets/css/components/footer.css">
-  <link rel="stylesheet" href="../assets/css/paginas/legal.css">
-  <link rel="stylesheet" href="../assets/css/cookie-banner.css">
+  <!-- CSS do projeto -->
+  <link rel="stylesheet" href="../assets/css/reset.css" />
+  <link rel="stylesheet" href="../assets/css/variaveis.css" />
+  <link rel="stylesheet" href="../assets/css/componentes.css" />
+  <link rel="stylesheet" href="../assets/css/components/header.css" />
+  <link rel="stylesheet" href="../assets/css/components/footer.css" />
+  <link rel="stylesheet" href="../assets/css/cookie-banner.css" />
+
+  <style>
+    .termos-page {
+      min-height: 100vh;
+      background-color: #f5f7fb;
+    }
+
+    .hero-page {
+      background: radial-gradient(circle at top left, #1f5bb3 0%, #174283 35%, #0b1b33 80%);
+      color: #ffffff;
+    }
+
+    .hero-page.hero-page-slim {
+      padding: 7.5rem 0 3.2rem;
+    }
+
+    .hero-page-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .hero-page-text-centered {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero-badge-termos {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .page-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      margin: 1.1rem 0 0.75rem;
+      color: #ffffff;
+    }
+
+    .page-subtitle {
+      font-size: 1.1rem;
+      opacity: 0.96;
+      max-width: 580px;
+      margin: 0 auto;
+      color: #eaf2ff;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #174283;
+    }
+
+    .termos-content-section {
+      padding: 3.5rem 0 4.5rem;
+      background: #f5f7fb;
+    }
+
+    .termos-layout {
+      display: block;
+      max-width: 100%;
+    }
+
+    .termos-layout > aside,
+    .termos-sidebar,
+    .termos-content-section .sidebar,
+    .termos-page .sidebar {
+      display: none !important;
+    }
+
+    .termos-card {
+      max-width: 980px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2.4rem 2.2rem;
+      box-shadow: 0 14px 38px rgba(15, 46, 76, 0.10);
+      border: 1px solid rgba(23, 66, 131, 0.06);
+    }
+
+    .termos-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid rgba(23, 66, 131, 0.08);
+    }
+
+    .termos-tag {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(23, 66, 131, 0.08);
+      color: #174283;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+
+    .termos-intro {
+      font-size: 1rem;
+      color: #4b5563;
+      line-height: 1.8;
+      margin-top: 0.75rem;
+      max-width: 760px;
+    }
+
+    .termos-block {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid rgba(23, 66, 131, 0.08);
+    }
+
+    .termos-block:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .termos-block h3 {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 0.6rem;
+    }
+
+    .termos-block p {
+      font-size: 0.98rem;
+      color: #4b5563;
+      line-height: 1.85;
+      margin-bottom: 0.7rem;
+      max-width: 100%;
+    }
+
+    .termos-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 0.2rem;
+      margin: 0;
+    }
+
+    .termos-list li {
+      position: relative;
+      padding-left: 1.2rem;
+      font-size: 0.97rem;
+      color: #4b5563;
+      line-height: 1.75;
+      list-style: none;
+    }
+
+    .termos-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #174283;
+    }
+
+    .termos-block-highlight {
+      margin-top: 0.4rem;
+      background: linear-gradient(135deg, rgba(23, 66, 131, 0.04), rgba(31, 91, 179, 0.07));
+      border: 1px solid rgba(23, 66, 131, 0.08);
+      border-radius: 18px;
+      padding: 1.4rem 1.3rem;
+    }
+
+    .whatsapp-floating {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      gap: 6px;
+    }
+
+    .whatsapp-floating-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: #25D366;
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      font-size: 28px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+    .whatsapp-floating-button:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+      background-color: #1ebe5b;
+    }
+
+    .whatsapp-floating-message {
+      position: relative;
+      max-width: 220px;
+      background: linear-gradient(135deg, #e0ebff 0%, #c7dafc 100%);
+      color: #111827;
+      border-radius: 18px;
+      padding: 8px 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.3;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      text-align: left;
+      word-break: break-word;
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .whatsapp-floating-message span {
+      display: block;
+    }
+
+    .whatsapp-floating-message::after {
+      content: '';
+      position: absolute;
+      right: 18px;
+      bottom: -6px;
+      width: 14px;
+      height: 14px;
+      background: linear-gradient(135deg, #e0ebff 0%, #c7dafc 100%);
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+    }
+
+    .whatsapp-floating-message::before {
+      content: '';
+      position: absolute;
+      right: 12px;
+      bottom: -18px;
+      width: 8px;
+      height: 8px;
+      background: linear-gradient(135deg, #e0ebff 0%, #c7dafc 100%);
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+    }
+
+    .whatsapp-floating-message.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    @media (max-width: 992px) {
+      .hero-page-container {
+        padding: 0 16px;
+      }
+
+      .termos-card {
+        padding: 2rem 1.6rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-page.hero-page-slim {
+        padding: 6rem 0 2.8rem;
+      }
+
+      .page-title {
+        font-size: 2.2rem;
+      }
+
+      .page-subtitle {
+        font-size: 1rem;
+      }
+
+      .termos-content-section {
+        padding: 3.2rem 0 3.6rem;
+      }
+
+      .termos-card {
+        padding: 1.8rem 1.3rem;
+        border-radius: 20px;
+      }
+
+      .section-title {
+        font-size: 1.7rem;
+      }
+
+      .whatsapp-floating {
+        bottom: 16px;
+        right: 16px;
+      }
+
+      .whatsapp-floating-button {
+        width: 52px;
+        height: 52px;
+        font-size: 26px;
+      }
+
+      .whatsapp-floating-message {
+        max-width: 190px;
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .termos-card {
+        padding: 1.5rem 1rem;
+      }
+
+      .termos-block-highlight {
+        padding: 1.1rem 1rem;
+      }
+
+      .whatsapp-floating-message {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <div id="header-container"></div>
 
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main class="legal-page">
-    
-    <!-- Breadcrumb -->
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Navegação estrutural">
-        <a href="../index.html" class="breadcrumb-item">
-          <i class="fas fa-home" aria-hidden="true"></i> Início
-        </a>
-        <span class="breadcrumb-separator">/</span>
-        <span class="breadcrumb-item active">Política de Privacidade</span>
-      </nav>
-    </div>
-
-    <!-- Header da Página -->
-    <section class="legal-header">
-      <div class="container">
-        <h1 class="legal-title">Política de Privacidade</h1>
-        <p class="legal-update">
-          <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-          Última atualização: 18 de janeiro de 2026
-        </p>
-      </div>
-    </section>
-
-    <!-- Conteúdo -->
-    <section class="legal-content">
-      <div class="container">
-        <div class="legal-text">
-
-          <p>A sua privacidade é importante para nós. É política da <strong>Linhagro Linhares Agronegócios LTDA</strong> respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <strong>www.linhagro.com.br</strong> e outros canais digitais que possuímos e operamos.</p>
-
-          <h2>Identificação da Empresa</h2>
-          <div class="info-box">
-            <p><strong>Razão Social:</strong> Linhagro Linhares Agronegócios LTDA</p>
-            <p><strong>CNPJ:</strong> 05.624.744/0001-09</p>
-            <p><strong>Endereço:</strong> Rua Prefeito Samuel Batista Cruz, 2959, Nossa Senhora da Conceição, Linhares - ES, CEP 29900-527</p>
-            <p><strong>Telefone:</strong> (27) 3769-1695</p>
-            <p><strong>WhatsApp:</strong> (27) 99651-4725</p>
-            <p><strong>E-mail:</strong> marketing@linhagro.com.br</p>
-          </div>
-
-          <h2>1. Coleta de Informações</h2>
-          <p>Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemos isso por meios justos e legais, com o seu conhecimento e consentimento expresso. Também informamos por que estamos coletando e como será usado.</p>
-          
-          <p>As informações que podemos coletar incluem:</p>
-          <ul>
-            <li>Nome completo e dados de contato (e-mail, telefone)</li>
-            <li>Informações sobre sua propriedade rural e culturas</li>
-            <li>Dados de navegação e cookies (com seu consentimento)</li>
-            <li>Informações de compra e histórico de pedidos</li>
-          </ul>
-
-          <h2>2. Base Legal (LGPD)</h2>
-          <p>O tratamento de seus dados pessoais está fundamentado nas seguintes bases legais previstas na Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018):</p>
-          <ul>
-            <li><strong>Consentimento:</strong> Para envio de comunicações de marketing e uso de cookies não essenciais</li>
-            <li><strong>Execução de contrato:</strong> Para processar pedidos e prestar serviços</li>
-            <li><strong>Legítimo interesse:</strong> Para melhorar nossos serviços e segurança</li>
-            <li><strong>Cumprimento de obrigação legal:</strong> Para atender exigências fiscais e regulatórias</li>
-          </ul>
-
-          <h2>3. Armazenamento e Proteção de Dados</h2>
-          <p>Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado ou conforme exigido por lei. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis e com técnicas de segurança adequadas para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</p>
-          
-          <p>Adotamos as seguintes medidas de segurança:</p>
-          <ul>
-            <li>Criptografia SSL/TLS em todas as transmissões de dados</li>
-            <li>Controle de acesso restrito aos dados</li>
-            <li>Backups regulares e seguros</li>
-            <li>Monitoramento contínuo de vulnerabilidades</li>
-          </ul>
-
-          <h2>4. Compartilhamento de Informações</h2>
-          <p>Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando:</p>
-          <ul>
-            <li>Exigido por lei ou ordem judicial</li>
-            <li>Necessário para processamento de pagamentos (com parceiros certificados)</li>
-            <li>Com seu consentimento explícito</li>
-            <li>Para proteção de direitos e segurança da Linhagro e usuários</li>
-          </ul>
-
-          <h2>5. Cookies e Tecnologias Similares</h2>
-          <p>Utilizamos cookies para melhorar sua experiência de navegação. Os cookies são pequenos arquivos de texto armazenados no seu dispositivo.</p>
-          
-          <p><strong>Tipos de cookies que utilizamos:</strong></p>
-          <ul>
-            <li><strong>Cookies essenciais:</strong> Necessários para o funcionamento do site</li>
-            <li><strong>Cookies de desempenho:</strong> Analisam como você usa o site (Google Analytics)</li>
-            <li><strong>Cookies de funcionalidade:</strong> Lembram suas preferências</li>
-            <li><strong>Cookies de marketing:</strong> Exibem anúncios relevantes (com seu consentimento)</li>
-          </ul>
-
-          <p>Você pode gerenciar suas preferências de cookies através do banner de consentimento exibido no site.</p>
-
-          <h2>6. Google Analytics e Google Tag Manager</h2>
-          <p>Utilizamos Google Analytics e Google Tag Manager para análise de tráfego e comportamento no site. Estes serviços coletam informações anônimas sobre suas visitas, incluindo:</p>
-          <ul>
-            <li>Páginas visitadas e tempo de permanência</li>
-            <li>Dispositivo e navegador utilizado</li>
-            <li>Localização aproximada (cidade/estado)</li>
-            <li>Fonte de referência (como você chegou ao site)</li>
-          </ul>
-          <p>Estes dados são processados de acordo com a Política de Privacidade do Google e apenas com seu consentimento.</p>
-
-          <h2>7. Links Externos</h2>
-          <p>O nosso site pode ter links para sites externos que não são operados por nós (incluindo redes sociais). Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas políticas de privacidade.</p>
-
-          <h2>8. Seus Direitos (LGPD)</h2>
-          <p>Você tem os seguintes direitos em relação aos seus dados pessoais:</p>
-          <ul>
-            <li><strong>Confirmação e acesso:</strong> Confirmar se tratamos seus dados e acessá-los</li>
-            <li><strong>Correção:</strong> Solicitar correção de dados incompletos ou desatualizados</li>
-            <li><strong>Anonimização, bloqueio ou eliminação:</strong> Solicitar remoção de dados desnecessários</li>
-            <li><strong>Portabilidade:</strong> Receber seus dados em formato estruturado</li>
-            <li><strong>Revogação do consentimento:</strong> Retirar consentimento a qualquer momento</li>
-            <li><strong>Oposição:</strong> Opor-se ao tratamento de dados em certas situações</li>
-          </ul>
-
-          <p>Para exercer seus direitos, entre em contato através do e-mail: <strong>marketing@linhagro.com.br</strong> ou WhatsApp: <strong>(27) 99651-4725</strong>.</p>
-
-          <h2>9. Direito de Recusa</h2>
-          <p>Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados. O uso de cookies não essenciais pode ser recusado através do banner de consentimento.</p>
-
-          <h2>10. Retenção de Dados</h2>
-          <p>Mantemos seus dados pessoais pelo seguinte período:</p>
-          <ul>
-            <li><strong>Dados de clientes ativos:</strong> Durante a relação comercial e por até 5 anos após</li>
-            <li><strong>Dados de navegação (cookies):</strong> Conforme definido em cada cookie (geralmente 1–2 anos)</li>
-            <li><strong>Dados fiscais/contábeis:</strong> Conforme exigido pela legislação (mínimo 5 anos)</li>
-          </ul>
-
-          <h2>11. Menores de Idade</h2>
-          <p>Nosso site não é direcionado a menores de 18 anos. Não coletamos intencionalmente dados de menores sem consentimento dos responsáveis legais.</p>
-
-          <h2>12. Alterações nesta Política</h2>
-          <p>Podemos atualizar nossa Política de Privacidade periodicamente. Notificaremos você sobre mudanças significativas através de avisos em nosso site ou por e-mail. A data de “última atualização” no topo desta página indica quando foi modificada.</p>
-
-          <h2>13. Compromisso do Usuário</h2>
-          <p>O usuário se compromete a fazer uso adequado dos conteúdos e da informação que a Linhagro oferece no site e, com caráter enunciativo, mas não limitativo:</p>
-
-          <ul>
-            <li><strong>A)</strong> Não se envolver em atividades que sejam ilegais ou contrárias à boa fé e à ordem pública;</li>
-            <li><strong>B)</strong> Não difundir propaganda ou conteúdo de natureza racista, xenofóbica, jogos de sorte ou azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;</li>
-            <li><strong>C)</strong> Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) da Linhagro, de seus fornecedores ou terceiros, nem introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas capazes de causar danos anteriormente mencionados.</li>
-          </ul>
-
-          <h2>14. Contato e DPO</h2>
-          <p>Se você tiver dúvidas sobre esta Política de Privacidade, sobre o tratamento de seus dados ou desejar exercer seus direitos, entre em contato:</p>
-          
-          <div class="contact-box">
-            <p><strong>E-mail:</strong> marketing@linhagro.com.br</p>
-            <p><strong>WhatsApp:</strong> (27) 99651-4725</p>
-            <p><strong>Telefone:</strong> (27) 3769-1695</p>
-            <p><strong>Endereço:</strong> Rua Prefeito Samuel Batista Cruz, 2959, Linhares - ES, CEP 29900-527</p>
-            <p><strong>Horário de atendimento:</strong> Segunda a Sexta, das 8h às 18h</p>
-          </div>
-
-          <h2>15. Aceitação</h2>
-          <p>O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Ao aceitar os cookies através do banner de consentimento, você concorda com o uso de cookies conforme descrito nesta política.</p>
-
-          <p class="legal-effective">Esta política é efetiva a partir de <strong>18 de janeiro de 2026</strong> e substitui todas as versões anteriores.</p>
-
+  <main class="termos-page">
+    <section class="hero-page hero-page-slim">
+      <div class="container hero-page-container">
+        <div class="hero-page-text-centered">
+          <span class="hero-badge-termos">
+            <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+            Termos de uso
+          </span>
+          <h1 class="page-title">Termos de Uso</h1>
+          <p class="page-subtitle">
+            Consulte as condições aplicáveis ao acesso e uso do site da Litho Plant,
+            incluindo responsabilidades, direitos e regras de navegação.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Botão Voltar ao Topo -->
-    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
-      <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </button>
+    <section class="termos-content-section">
+      <div class="container">
+        <div class="termos-layout">
+          <article class="termos-card">
 
+            <header class="termos-header">
+              <span class="termos-tag">Documento institucional</span>
+              <h2 class="section-title">Condições de acesso e utilização</h2>
+              <p class="termos-intro">
+                Ao acessar este site, o usuário concorda com os presentes Termos de Uso,
+                que regulam a navegação, consulta de informações, envio de dados por formulários
+                e demais interações com os canais digitais da Litho Plant.
+              </p>
+            </header>
+
+            <section class="termos-block">
+              <h3>1. Aceitação dos termos</h3>
+              <p>
+                O acesso, navegação e uso deste site implicam a leitura, compreensão e aceitação
+                integral destes Termos de Uso, bem como das demais políticas eventualmente publicadas
+                em ambiente digital pela Litho Plant.
+              </p>
+              <p>
+                Caso o usuário não concorde com qualquer condição aqui prevista, recomenda-se que
+                interrompa imediatamente a navegação e não utilize os recursos disponibilizados no site.
+              </p>
+            </section>
+
+            <section class="termos-block">
+              <h3>2. Finalidade do site</h3>
+              <p>
+                Este site tem caráter institucional e informativo, sendo destinado à apresentação
+                da Litho Plant, de seus produtos, tecnologias, conteúdos, canais de atendimento,
+                materiais técnicos e informações relacionadas às suas atividades.
+              </p>
+              <p>
+                O conteúdo disponibilizado não substitui orientação técnica individualizada, visita
+                de campo, recomendação agronômica específica ou avaliação profissional aplicada à
+                realidade de cada produtor e cultura.
+              </p>
+            </section>
+
+            <section class="termos-block">
+              <h3>3. Uso adequado</h3>
+              <p>
+                O usuário compromete-se a utilizar o site de forma lícita, ética e compatível com
+                sua finalidade, abstendo-se de praticar atos que possam comprometer a segurança,
+                disponibilidade, integridade ou reputação da Litho Plant e de seus ambientes digitais.
+              </p>
+              <ul class="termos-list">
+                <li>Não utilizar o site para fins fraudulentos, ilegais ou abusivos.</li>
+                <li>Não tentar acessar áreas restritas, sistemas internos ou funcionalidades não autorizadas.</li>
+                <li>Não introduzir vírus, scripts maliciosos, robôs ou mecanismos de coleta indevida de dados.</li>
+                <li>Não reproduzir ou explorar comercialmente o conteúdo sem autorização prévia.</li>
+              </ul>
+            </section>
+
+            <section class="termos-block">
+              <h3>4. Propriedade intelectual</h3>
+              <p>
+                Textos, marcas, nomes, logotipos, imagens, materiais gráficos, documentos técnicos,
+                layout, identidade visual e demais elementos disponíveis no site pertencem à Litho Plant
+                ou são utilizados mediante autorização legítima.
+              </p>
+              <p>
+                É vedada a reprodução, distribuição, modificação, publicação, exibição, engenharia reversa,
+                republicação ou uso comercial de qualquer conteúdo sem autorização expressa e formal,
+                salvo quando permitido pela legislação aplicável.
+              </p>
+            </section>
+
+            <section class="termos-block">
+              <h3>5. Informações e disponibilidade</h3>
+              <p>
+                A Litho Plant adota esforços razoáveis para manter as informações do site corretas,
+                atualizadas e completas, porém não garante ausência de erros materiais, indisponibilidades
+                temporárias, falhas técnicas, interrupções ou defasagens pontuais de conteúdo.
+              </p>
+              <p>
+                O site poderá ser alterado, atualizado, suspenso parcial ou integralmente, ou ter
+                conteúdos removidos a qualquer momento, sem necessidade de aviso prévio, por razões
+                operacionais, técnicas, estratégicas ou legais.
+              </p>
+            </section>
+
+            <section class="termos-block">
+              <h3>6. Limitação de responsabilidade</h3>
+              <p>
+                A Litho Plant não se responsabiliza por danos indiretos, lucros cessantes, perda de dados,
+                indisponibilidade de equipamentos, falhas de conexão, interferências externas ou prejuízos
+                decorrentes do uso inadequado do site por parte do usuário ou de terceiros.
+              </p>
+              <p>
+                Da mesma forma, a empresa não garante que o ambiente digital esteja permanentemente livre
+                de falhas, vulnerabilidades, interrupções ou incompatibilidades com todos os navegadores,
+                dispositivos e versões de sistema operacional existentes.
+              </p>
+            </section>
+
+            <section class="termos-block">
+              <h3>7. Links externos</h3>
+              <p>
+                O site poderá conter links para plataformas, redes sociais, aplicativos ou páginas de terceiros.
+                Tais ambientes possuem políticas e termos próprios, não sendo controlados diretamente pela Litho Plant.
+              </p>
+              <p>
+                O acesso a ambientes externos ocorre por conta e risco do usuário, que deverá verificar
+                individualmente as condições de uso, privacidade e segurança aplicáveis a cada serviço.
+              </p>
+            </section>
+
+            <section class="termos-block">
+              <h3>8. Canais de contato e formulários</h3>
+              <p>
+                Ao preencher formulários, solicitar contato comercial ou interagir com os canais disponibilizados
+                no site, o usuário declara fornecer informações verdadeiras, atualizadas e pertinentes ao objetivo
+                do atendimento solicitado.
+              </p>
+              <p>
+                O envio de mensagens ofensivas, enganosas, automatizadas em massa ou com conteúdo incompatível
+                com a finalidade do canal poderá resultar no bloqueio da solicitação e na adoção das medidas cabíveis.
+              </p>
+            </section>
+
+            <section class="termos-block">
+              <h3>9. Alterações destes termos</h3>
+              <p>
+                A Litho Plant poderá revisar, atualizar ou modificar estes Termos de Uso a qualquer tempo,
+                especialmente para adequação legal, melhoria operacional, atualização de serviços ou mudança
+                na estrutura do site.
+              </p>
+              <p>
+                Recomenda-se ao usuário consultar periodicamente esta página para verificar a versão mais recente
+                das condições aplicáveis à navegação.
+              </p>
+            </section>
+
+            <section class="termos-block">
+              <h3>10. Legislação aplicável</h3>
+              <p>
+                Estes Termos de Uso serão interpretados de acordo com a legislação brasileira aplicável.
+                Eventuais controvérsias decorrentes do uso deste site deverão ser tratadas na forma da lei,
+                observadas as regras de competência pertinentes.
+              </p>
+            </section>
+
+            <section class="termos-block termos-block-highlight">
+              <h3>11. Contato</h3>
+              <p>
+                Em caso de dúvidas sobre estes Termos de Uso ou sobre qualquer conteúdo disponibilizado
+                no site, o usuário poderá entrar em contato com a equipe da Litho Plant por meio dos canais
+                oficiais informados na página de contato e no WhatsApp institucional.
+              </p>
+            </section>
+
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- FOOTER -->
   <div id="footer-container"></div>
-
-  <!-- Cookie Banner -->
   <div id="cookie-banner-container"></div>
 
-  <!-- SCRIPTS -->
+  <div class="whatsapp-floating">
+    <a
+      href="https://wa.me/5527999805780?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20com%20a%20Litho%20Plant."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar com a Litho Plant no WhatsApp"
+      class="whatsapp-floating-button"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div class="whatsapp-floating-message">
+      <span>Precisa de ajuda com os termos do site?</span>
+    </div>
+  </div>
+
   <script src="../assets/components-loader.js"></script>
   <script src="../assets/js/components/header.js"></script>
-  <script src="../assets/js/paginas/politica.js"></script>
 
-  <!-- Carregar Cookie Banner + JS de consentimento -->
   <script>
+    function initFloatingWhatsappMessage() {
+      const messageEl = document.querySelector('.whatsapp-floating-message');
+      if (!messageEl || messageEl.dataset.initialized === 'true') return;
+
+      messageEl.dataset.initialized = 'true';
+
+      const mensagens = [
+        'Fale com a equipe<br>Litho Plant',
+        'Precisa de ajuda com<br>os termos do site?',
+        'Tire suas dúvidas<br>pelo WhatsApp',
+        'Atendimento rápido<br>com nossa equipe'
+      ];
+
+      let idx = 0;
+
+      function mostrarMensagem() {
+        const span = messageEl.querySelector('span');
+        if (!span) return;
+
+        span.innerHTML = mensagens[idx];
+        messageEl.classList.add('visible');
+
+        setTimeout(() => {
+          messageEl.classList.remove('visible');
+        }, 2500);
+
+        idx = (idx + 1) % mensagens.length;
+      }
+
+      setTimeout(mostrarMensagem, 3000);
+      setInterval(mostrarMensagem, 6000);
+    }
+
     async function loadCookieBanner() {
       try {
         const response = await fetch('../assets/components/cookie-banner.html');
@@ -243,8 +620,15 @@
         console.error('Erro ao carregar cookie banner:', error);
       }
     }
-    loadCookieBanner();
-  </script>
 
+    document.addEventListener('DOMContentLoaded', () => {
+      initFloatingWhatsappMessage();
+      loadCookieBanner();
+    });
+
+    document.addEventListener('componentsLoaded', () => {
+      initFloatingWhatsappMessage();
+    });
+  </script>
 </body>
 </html>
